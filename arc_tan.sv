@@ -20,7 +20,7 @@ module arc_tan(
     if (Gx == 0 && Gy == 0) begin
       angle = 2'b00; 
     end
-    else if (Gx == 0) begin
+    else if (Gx == 0) begin 
       angle = 2'b10; 
     end
     else if (Gy == 0) begin
