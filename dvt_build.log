@@ -1,0 +1,148 @@
+*** Start analyzing build configuration ***
+INFO: Auto-config - Scanning: /home/deck/Desktop/edge_runners
+INFO: Auto-config - VLOG: /home/deck/Desktop/edge_runners
+INFO: Auto-config - Wrote:
+    .dvt/default.build.auto.1
+*** List of included argument files ***
+    Build configuration file:  /home/deck/Desktop/edge_runners/.dvt/default.build
+    -f /home/deck/Desktop/edge_runners/.dvt/default.build.auto.1
+*** List of invocations ***
+Invocation #1 +dvt_init+dvt in /home/deck/Desktop/edge_runners/.dvt/default.build.auto.1 at line 9
+*** Done analyzing build configuration [256 ms] ***
+
+*** Start SystemVerilog build ***
+*** Invocation #1***
+Loading (1) /home/deck/Desktop/edge_runners/arc_tan.sv ...
+Done /home/deck/Desktop/edge_runners/arc_tan.sv [81 ms, 41 lines, SystemVerilog_2012] ...
+Loading (2) /home/deck/Desktop/edge_runners/double_thresholding.sv ...
+Done /home/deck/Desktop/edge_runners/double_thresholding.sv [0 ms, 2 lines, SystemVerilog_2012] ...
+Loading (3) /home/deck/Desktop/edge_runners/edge_track_hysteresis.sv ...
+Done /home/deck/Desktop/edge_runners/edge_track_hysteresis.sv [0 ms, 2 lines, SystemVerilog_2012] ...
+Loading (4) /home/deck/Desktop/edge_runners/non_max_suppression.sv ...
+Done /home/deck/Desktop/edge_runners/non_max_suppression.sv [13 ms, 30 lines, SystemVerilog_2012] ...
+Loading (5) /home/deck/Desktop/edge_runners/sqrt_22b.sv ...
+Done /home/deck/Desktop/edge_runners/sqrt_22b.sv [136 ms, 43 lines, SystemVerilog_2012] ...
+Loading (6) /home/deck/Desktop/edge_runners/testBench/arc_tan_tb.sv ...
+Done /home/deck/Desktop/edge_runners/testBench/arc_tan_tb.sv [23 ms, 53 lines, SystemVerilog_2012] ...
+Loading (7) /home/deck/Desktop/edge_runners/testBench/canny_edge_tb.sv ...
+Done /home/deck/Desktop/edge_runners/testBench/canny_edge_tb.sv [0 ms, 2 lines, SystemVerilog_2012] ...
+Loading (8) /home/deck/Desktop/edge_runners/testBench/gradient_calculation_tb.sv ...
+Done /home/deck/Desktop/edge_runners/testBench/gradient_calculation_tb.sv [43 ms, 172 lines, SystemVerilog_2012] ...
+Loading (9) /home/deck/Desktop/edge_runners/testBench/pixel_loader_tb.sv ...
+Done /home/deck/Desktop/edge_runners/testBench/pixel_loader_tb.sv [18 ms, 114 lines, SystemVerilog_2012] ...
+Loading (10) /home/deck/Desktop/edge_runners/testBench/sqrt_22b_tb.sv ...
+Done /home/deck/Desktop/edge_runners/testBench/sqrt_22b_tb.sv [5 ms, 21 lines, SystemVerilog_2012] ...
+Loading (11) /home/deck/Desktop/edge_runners/definitions_pkg.sv ...
+Done /home/deck/Desktop/edge_runners/definitions_pkg.sv [5 ms, 25 lines, SystemVerilog_2012] ...
+Loading (12) /home/deck/Desktop/edge_runners/testBench/line_buffer_tb.sv ...
+Done /home/deck/Desktop/edge_runners/testBench/line_buffer_tb.sv [11 ms, 52 lines, SystemVerilog_2012] ...
+Loading (13) /home/deck/Desktop/edge_runners/pixel_loader.sv ...
+Done /home/deck/Desktop/edge_runners/pixel_loader.sv [34 ms, 172 lines, SystemVerilog_2012] ...
+Loading (14) /home/deck/Desktop/edge_runners/line_buffer.sv ...
+Done /home/deck/Desktop/edge_runners/line_buffer.sv [9 ms, 45 lines, SystemVerilog_2012] ...
+Loading (15) /home/deck/Desktop/edge_runners/gradient_calculation.sv ...
+Done /home/deck/Desktop/edge_runners/gradient_calculation.sv [24 ms, 152 lines, SystemVerilog_2012] ...
+Loading (16) /home/deck/Desktop/edge_runners/gaussian_filter.sv ...
+Done /home/deck/Desktop/edge_runners/gaussian_filter.sv [6 ms, 55 lines, SystemVerilog_2012] ...
+Loading (17) /home/deck/Desktop/edge_runners/canny_edge_top.sv ...
+Done /home/deck/Desktop/edge_runners/canny_edge_top.sv [3 ms, 19 lines, SystemVerilog_2012] ...
+*** Done invocation #1 [425 ms] ***
+*** Done parsing [LT 245 ms, PT 425 ms] ***
+*** Total number of lines [1 000] ***
+Performing post full build actions ...
+Performing post full build step 1 (SRI) [1 ms] ...
+Performing post full build step 2 (RI) [1 ms] ...
+Performing post full build step 3 (RCP) [0 ms] ...
+*** Files summary [17 total, 17 unique, 0 optimized] ***
+*** Done SystemVerilog build [652 ms] ***
+
+*** Start mixed mode extension build ***
+Performing mixed post full build step (VLOG - RI) [1 ms] ...
+*** Warning: UNSPECIFIED_TOP: Please specify a -top module/entity/configuration in the project build file
+*** Top design candidates: work.arc_tan_tb, work.gradient_calculation_tb, work.pixel_loader_tb, work.sqrt_22b_tb, work.line_buffer_tb
+Performing mixed post full build step (MIXED - ELAB) [483 ms] ...
+Performing mixed post full build step (MIXED - UNEL) [53 ms] ...
+*** Error: NON_EXISTING_PORT: Non existing port 'rd_data' of module 'line_buffer'
+    at line 13 in /home/deck/Desktop/edge_runners/testBench/line_buffer_tb.sv:13 [compile index 12]
+*** Warning: MISSING_PORT_CONNECTION: Instance 'lb1' of module 'line_buffer' is missing port connection to input 'rd_enable'
+    at line 13 in /home/deck/Desktop/edge_runners/testBench/line_buffer_tb.sv:13 [compile index 12]
+*** Warning: WIDTH_MISMATCH_TRUNCATION: Assignment to 'i_data' of '8-bit' type from 'i' of '32-bit' type
+    at line 34 in /home/deck/Desktop/edge_runners/testBench/line_buffer_tb.sv:34 [compile index 12]
+*** Warning: WIDTH_MISMATCH_TRUNCATION: Assignment to 'Gx' of '11-bit' type from '- 52' of '32-bit' type
+    at line 28 in /home/deck/Desktop/edge_runners/testBench/arc_tan_tb.sv:28 [compile index 6]
+*** Warning: WIDTH_MISMATCH_TRUNCATION: Assignment to 'Gy' of '11-bit' type from '- 64' of '32-bit' type
+    at line 29 in /home/deck/Desktop/edge_runners/testBench/arc_tan_tb.sv:29 [compile index 6]
+*** Warning: WIDTH_MISMATCH_TRUNCATION: Assignment to 'Gx' of '11-bit' type from '- 736' of '32-bit' type
+    at line 31 in /home/deck/Desktop/edge_runners/testBench/arc_tan_tb.sv:31 [compile index 6]
+*** Warning: WIDTH_MISMATCH_TRUNCATION: Assignment to 'Gy' of '11-bit' type from '- 123' of '32-bit' type
+    at line 32 in /home/deck/Desktop/edge_runners/testBench/arc_tan_tb.sv:32 [compile index 6]
+*** Warning: WIDTH_MISMATCH_TRUNCATION: Assignment to 'Gy' of '11-bit' type from '- 64' of '32-bit' type
+    at line 35 in /home/deck/Desktop/edge_runners/testBench/arc_tan_tb.sv:35 [compile index 6]
+*** Warning: WIDTH_MISMATCH_TRUNCATION: Assignment to 'Gy' of '11-bit' type from '- 123' of '32-bit' type
+    at line 38 in /home/deck/Desktop/edge_runners/testBench/arc_tan_tb.sv:38 [compile index 6]
+*** Warning: WIDTH_MISMATCH_TRUNCATION: Assignment to 'Gx' of '11-bit' type from '- 52' of '32-bit' type
+    at line 40 in /home/deck/Desktop/edge_runners/testBench/arc_tan_tb.sv:40 [compile index 6]
+*** Warning: WIDTH_MISMATCH_TRUNCATION: Assignment to 'Gx' of '11-bit' type from '- 736' of '32-bit' type
+    at line 43 in /home/deck/Desktop/edge_runners/testBench/arc_tan_tb.sv:43 [compile index 6]
+*** Warning: CASE_ITEM_WIDTH_MISMATCH: Comparison between case expression 'curr_rd_buffer' of '2-bit' type and item expression '0' of '32-bit' type
+    at line 113 in /home/deck/Desktop/edge_runners/pixel_loader.sv:113 [compile index 13]
+*** Warning: CASE_ITEM_WIDTH_MISMATCH: Comparison between case expression 'curr_rd_buffer' of '2-bit' type and item expression '1' of '32-bit' type
+    at line 114 in /home/deck/Desktop/edge_runners/pixel_loader.sv:114 [compile index 13]
+*** Warning: CASE_ITEM_WIDTH_MISMATCH: Comparison between case expression 'curr_rd_buffer' of '2-bit' type and item expression '2' of '32-bit' type
+    at line 115 in /home/deck/Desktop/edge_runners/pixel_loader.sv:115 [compile index 13]
+*** Warning: CASE_ITEM_WIDTH_MISMATCH: Comparison between case expression 'curr_rd_buffer' of '2-bit' type and item expression '3' of '32-bit' type
+    at line 116 in /home/deck/Desktop/edge_runners/pixel_loader.sv:116 [compile index 13]
+*** Warning: CASE_ITEM_WIDTH_MISMATCH: Comparison between case expression 'curr_rd_buffer' of '2-bit' type and item expression '0' of '32-bit' type
+    at line 127 in /home/deck/Desktop/edge_runners/pixel_loader.sv:127 [compile index 13]
+*** Warning: CASE_ITEM_WIDTH_MISMATCH: Comparison between case expression 'curr_rd_buffer' of '2-bit' type and item expression '1' of '32-bit' type
+    at line 128 in /home/deck/Desktop/edge_runners/pixel_loader.sv:128 [compile index 13]
+*** Warning: CASE_ITEM_WIDTH_MISMATCH: Comparison between case expression 'curr_rd_buffer' of '2-bit' type and item expression '2' of '32-bit' type
+    at line 129 in /home/deck/Desktop/edge_runners/pixel_loader.sv:129 [compile index 13]
+*** Warning: CASE_ITEM_WIDTH_MISMATCH: Comparison between case expression 'curr_rd_buffer' of '2-bit' type and item expression '3' of '32-bit' type
+    at line 130 in /home/deck/Desktop/edge_runners/pixel_loader.sv:130 [compile index 13]
+*** Warning: WIDTH_MISMATCH_TRUNCATION: Assignment to 'pixel_value' of '8-bit' type from 'gradient_magnitude' of '11-bit' type
+    at line 161 in /home/deck/Desktop/edge_runners/testBench/gradient_calculation_tb.sv:161 [compile index 8]
+*** Warning: WIDTH_MISMATCH_PADDING: Assignment to 'pixel_value' of '8-bit' type from 'gradient_direction' of '2-bit' type
+    at line 162 in /home/deck/Desktop/edge_runners/testBench/gradient_calculation_tb.sv:162 [compile index 8]
+*** Warning: UNELABORATED_MODULE: Module 'work.Non_Max_Suppresion' is not elaborated
+    at line 1 in /home/deck/Desktop/edge_runners/non_max_suppression.sv:1 [compile index 4]
+*** Warning: UNELABORATED_MODULE: Module 'work.canny_edge_top' is not elaborated
+    at line 1 in /home/deck/Desktop/edge_runners/canny_edge_top.sv:1 [compile index 17]
+Performing mixed post full build step (VLOG - RD) [1 ms] ...
+Performing mixed post full build step (VLOG - US) [101 ms] ...
+*** Warning: SIGNAL_NEVER_USED: Signal 'angle' is never used
+    at line 4 in /home/deck/Desktop/edge_runners/non_max_suppression.sv:4 [compile index 4]
+*** Warning: SIGNAL_NEVER_READ: Signal 'gradient_array' is never read
+    at line 7 in /home/deck/Desktop/edge_runners/non_max_suppression.sv:7 [compile index 4]
+*** Warning: INTERNAL_GENERATED_CLOCK: Clock signal 'clk' is not an input port
+    at line 156 in /home/deck/Desktop/edge_runners/testBench/gradient_calculation_tb.sv:156 [compile index 8]
+*** Warning: INTERNAL_GENERATED_RESET: Reset signal 'gaussian_pixel_out_valid' is not an input port
+    at line 157 in /home/deck/Desktop/edge_runners/testBench/gradient_calculation_tb.sv:157 [compile index 8]
+*** Warning: SIGNAL_RESET_BUT_NOT_DRIVEN: Signal 'file2' is reset but not driven
+    at line 96 in /home/deck/Desktop/edge_runners/testBench/pixel_loader_tb.sv:96 [compile index 9]
+*** Warning: INTERNAL_GENERATED_CLOCK: Clock signal 'clk' is not an input port
+    at line 107 in /home/deck/Desktop/edge_runners/testBench/pixel_loader_tb.sv:107 [compile index 9]
+*** Warning: INTERNAL_GENERATED_RESET: Reset signal 'gaussian_pixel_out_valid' is not an input port
+    at line 108 in /home/deck/Desktop/edge_runners/testBench/pixel_loader_tb.sv:108 [compile index 9]
+*** Warning: SIGNAL_NEVER_READ: Signal 'sqrt' is never read (connected to sub-instance output port)
+    at line 5 in /home/deck/Desktop/edge_runners/testBench/sqrt_22b_tb.sv:5 [compile index 10]
+*** Warning: SIGNAL_NOT_RESET: Signal 'line' is not reset
+    at line 21 in /home/deck/Desktop/edge_runners/line_buffer.sv:21 [compile index 14]
+*** Warning: SIGNAL_NEVER_USED: Signal 'clk' is never used
+    at line 5 in /home/deck/Desktop/edge_runners/canny_edge_top.sv:5 [compile index 17]
+*** Warning: SIGNAL_NEVER_USED: Signal 'rstN' is never used
+    at line 6 in /home/deck/Desktop/edge_runners/canny_edge_top.sv:6 [compile index 17]
+*** Warning: SIGNAL_NEVER_USED: Signal 'pixel_in' is never used
+    at line 8 in /home/deck/Desktop/edge_runners/canny_edge_top.sv:8 [compile index 17]
+*** Warning: SIGNAL_NEVER_USED: Signal 'pixel_in_valid' is never used
+    at line 9 in /home/deck/Desktop/edge_runners/canny_edge_top.sv:9 [compile index 17]
+*** Warning: SIGNAL_NEVER_USED: Signal 'in_ready' is never used
+    at line 10 in /home/deck/Desktop/edge_runners/canny_edge_top.sv:10 [compile index 17]
+*** Warning: SIGNAL_NEVER_USED: Signal 'pixel_out' is never used
+    at line 12 in /home/deck/Desktop/edge_runners/canny_edge_top.sv:12 [compile index 17]
+*** Warning: SIGNAL_NEVER_USED: Signal 'pixel_out_valid' is never used
+    at line 13 in /home/deck/Desktop/edge_runners/canny_edge_top.sv:13 [compile index 17]
+*** Warning: SIGNAL_NEVER_USED: Signal 'out_ready' is never used
+    at line 14 in /home/deck/Desktop/edge_runners/canny_edge_top.sv:14 [compile index 17]
+*** Done mixed mode extension build [661 ms] ***
+*** Total build time [1s.672ms] ***
