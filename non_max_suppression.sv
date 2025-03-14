@@ -1,47 +1,46 @@
-module Non_Max_Suppresion(
-    input   logic   signed [10:0]  Gradiant_Magnitude_Pixel,
-    input   logic   signed [1:0]   Direction_Pixel,
-    output  logic   signed [10:0]  processed_pixels [0:11]
+module non_max_suppression
+  import definitions_pkg::*;
+  (
+    input   logic clk,
+    input   logic rstN,
+    input   logic [98:0]  gradient_magnitude,
+    input   logic [17:0]  gradient_direction,
+    input   logic         gradient_data_valid,
+    output  logic [10:0]  nms_magnitude,
+    output  logic [1:0]   nms_direction,
+    output  logic         nms_valid
   );
-  
-  logic signed [10:0] gradient_array [0:11];
-  logic signed [1:0] direction_array [0:11];
+
+
+  logic [10:0]  curr_magnitude;
+  logic [1:0]   curr_direction;
+
+  assign curr_magnitude = gradient_magnitude[54:44];
+  assign curr_direction = gradient_direction[9:8];
+
+  assign nms_direction  = curr_direction;
+  assign nms_valid      = gradient_data_valid;
 
   always_comb begin
-    for (int i = 0; i < 12; i++) begin
-      gradient_array[i] = Gradiant_Magnitude_Pixel; // import 12 pixels 
-      direction_array[i] = Direction_Pixel; // import 12 pixels
-    end
-
-    case (Direction_Pixel[4])
-      2'b00: begin
-        if (gradient_array[4] >= gradient_array[3] && gradient_array[4] >= gradient_array[5]) begin
-          gradient_array[3] = 0; 
-          gradient_array[5] = 0; 
-        end 
+    nms_magnitude = curr_magnitude;
+    case (curr_direction) 
+      0: begin
+        if ((curr_magnitude <= gradient_magnitude[65:55]) || (curr_magnitude <= gradient_magnitude[43:33]))
+          nms_magnitude <= '0;
       end
-      2'b01: begin
-        if (gradient_array[4] >= gradient_array[7] && gradient_array[4] >= gradient_array[1]) begin
-          gradient_array[2] = 0; 
-          gradient_array[10] = 0; 
-        end
+      1: begin
+        if ((curr_magnitude <= gradient_magnitude[98:88]) || (curr_magnitude <= gradient_magnitude[10:0]))
+          nms_magnitude <= '0;
       end
-      2'b10: begin
-        if (gradient_array[4] >= gradient_array[2] && gradient_array[4] >= gradient_array[6]) begin
-          gradient_array[2] = 0; 
-          gradient_array[6] = 0; 
-        end 
+      2: begin
+        if ((curr_magnitude <= gradient_magnitude[87:77]) || (curr_magnitude <= gradient_magnitude[21:11]))
+          nms_magnitude <= '0;
       end
-      2'b11: begin
-        if (gradient_array[4] >= gradient_array[7] && gradient_array[4] >= gradient_array[0]) begin
-          gradient_array[8] = 0; 
-          gradient_array[0] = 0; 
-        end
+      3: begin
+        if ((curr_magnitude <= gradient_magnitude[76:66]) || (curr_magnitude <= gradient_magnitude[32:21]))
+          nms_magnitude <= '0;
       end
     endcase
-
-    for (int i = 0; i < 12; i++) begin
-      processed_pixels[i] = gradient_array[i];
-    end
   end
-endmodule
+  
+endmodule: non_max_suppression

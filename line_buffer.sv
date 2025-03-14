@@ -1,15 +1,16 @@
 module line_buffer
   import definitions_pkg::*;
+  #(parameter SIZE = 8)
 (
-  input   logic         clk, 
-  input   logic         rstN, 
-  input   logic [7:0]   i_data, 
-  input   logic         i_data_valid,
-  input   logic         rd_enable, 
-  output  logic [23:0]  o_data
+  input   logic                clk, 
+  input   logic                rstN, 
+  input   logic [SIZE-1:0]     i_data, 
+  input   logic                i_data_valid,
+  input   logic                rd_enable, 
+  output  logic [3*SIZE-1:0]   o_data
 );
 
-  logic [7:0] line [0:IMAGE_WIDTH-1];
+  logic [SIZE-1:0] line [0:IMAGE_WIDTH-1];
   logic [$clog2(IMAGE_WIDTH)-1:0] rdPtr, wrPtr;
 
   // write to line buffer logic

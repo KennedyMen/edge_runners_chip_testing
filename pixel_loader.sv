@@ -1,12 +1,13 @@
 module pixel_loader
   import definitions_pkg::*;
+  #(parameter ITEM_SIZE = 8)
 (
-  input   logic         clk, 
-  input   logic         rstN,
-  input   logic [7:0]   pixel_in,
-  input   logic         pixel_in_valid,
-  output  logic [71:0]  pixel_data_out,
-  output  logic         pixel_data_out_valid
+  input   logic                   clk, 
+  input   logic                   rstN,
+  input   logic [ITEM_SIZE-1:0]   pixel_in,
+  input   logic                   pixel_in_valid,
+  output  logic [9*ITEM_SIZE-1:0] pixel_data_out,
+  output  logic                   pixel_data_out_valid
 );
 
   logic [1:0] wr_buffer_enable;
@@ -17,7 +18,7 @@ module pixel_loader
   logic rd_buffer_enable;
   logic [1:0] curr_rd_buffer;
   logic [3:0] rd_buffer_data_valid;
-  logic [23:0] buffer0_out, buffer1_out, buffer2_out, buffer3_out;
+  logic [3*ITEM_SIZE-1:0] buffer0_out, buffer1_out, buffer2_out, buffer3_out;
 
   typedef enum logic [0:0]  {
                               IDLE = 1'b0,
@@ -131,7 +132,7 @@ module pixel_loader
     endcase
   end
 
-  line_buffer buffer0(
+  line_buffer #(.SIZE(ITEM_SIZE)) buffer0 (
     .clk(clk),
     .rstN(rstN),
     .i_data(pixel_in),
@@ -140,7 +141,7 @@ module pixel_loader
     .o_data(buffer0_out)
   );
 
-  line_buffer buffer1(
+  line_buffer #(.SIZE(ITEM_SIZE)) buffer1 (
     .clk(clk),
     .rstN(rstN),
     .i_data(pixel_in),
@@ -149,7 +150,7 @@ module pixel_loader
     .o_data(buffer1_out)
   );
 
-  line_buffer buffer2(
+  line_buffer #(.SIZE(ITEM_SIZE)) buffer2 (
     .clk(clk),
     .rstN(rstN),
     .i_data(pixel_in),
@@ -158,7 +159,7 @@ module pixel_loader
     .o_data(buffer2_out)
   );
 
-  line_buffer buffer3(
+  line_buffer #(.SIZE(ITEM_SIZE)) buffer3 (
     .clk(clk),
     .rstN(rstN),
     .i_data(pixel_in),
