@@ -1,7 +1,11 @@
 package definitions_pkg;
   parameter IMAGE_WIDTH = 512;
+
+  // The clock rate of the board
   parameter int CLOCK_RATE = 10000000;
+  // The baud rate of the UART interface
   parameter int BAUD_RATE = 9600;
+  // The oversample rate runs the UART receiver faster than baud for stability
   parameter int OVERSAMPLE_RATE = 16;
 
   const logic [7:0] gaussian_kernel_3 [0:8] =  '{
