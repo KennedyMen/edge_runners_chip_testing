@@ -15,19 +15,19 @@ module transmitter
 
   logic [7:0] buffer = 8'b0;
   logic [2:0] offset = 3'b0;
-  logic [AccWidth-1:0] counter = 0;
-  logic signal = 1'b0;
+  logic [AccWidth-1:0] sync_count = 0;
+  logic ticker = 1'b0;
 
   always_ff @(posedge clk) begin
-    if (counter == TxAccMax[TxAccWidth-1:0]) begin
-      counter <= 0;
-      signal <= ~signal;
+    if (sync_count == TxAccMax[TxAccWidth-1:0]) begin
+      sync_count <= 0;
+      ticker <= ~ticker;
     end else begin
-      counter <= counter + 1'b1;
+      sync_count <= sync_count + 1'b1;
     end
   end
 
-  always_ff @(posedge signal) begin
+  always_ff @(posedge ticker) begin
     if (!enabled) begin
       // Reset the transmitter
       busy <= 1'b0;
