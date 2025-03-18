@@ -1,5 +1,8 @@
 package definitions_pkg;
   parameter IMAGE_WIDTH = 512;
+  parameter int CLOCK_RATE = 10000000;
+  parameter int BAUD_RATE = 9600;
+  parameter int OVERSAMPLE_RATE = 16;
 
   const logic [7:0] gaussian_kernel_3 [0:8] =  '{
     8'h1, 8'h2, 8'h1, 
