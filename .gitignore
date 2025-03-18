@@ -1,3 +1,7 @@
 .vscode/
 .dvt/
 __pycache__/
+.venv/
+.Xil/
+Backup_logs_journals/
+dvt_build.log

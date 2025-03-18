@@ -34,7 +34,7 @@ transmitter uart_tx (
     .clk(clk),
     .enabled(txEnabled),
     .start(txStart),
-    .in(in),
+    .data(in),
     .busy(txBusy),
     .done(txDone),
     .out(tx)

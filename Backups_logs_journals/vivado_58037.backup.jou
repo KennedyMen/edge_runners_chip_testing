@@ -1,0 +1,25 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Tue Mar 18 19:04:15 2025
+# Process ID         : 58037
+# Current directory  : /home/deck/Documents/Edge_Runner/edge_runners
+# Command line       : vivado -mode batch -source simulation/create_vivado_project.tcl -journal Vivado/Journals/vivado.jou -log Vivado/Logs/vivado.log
+# Log file           : /home/deck/Documents/Edge_Runner/edge_runners/Vivado/Logs/vivado.log
+# Journal file       : /home/deck/Documents/Edge_Runner/edge_runners/Vivado/Journals/vivado.jou
+# Running On         : steamdeck
+# Platform           : SteamOS
+# Operating System   : SteamOS Holo
+# Processor Detail   : AMD Custom APU 0405
+# CPU Frequency      : 2880.966 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 15531 MB
+# Swap memory        : 8839 MB
+# Total Virtual      : 24371 MB
+# Available Virtual  : 10394 MB
+#-----------------------------------------------------------
+source simulation/create_vivado_project.tcl
+source nms_tb.tcl

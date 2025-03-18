@@ -19,7 +19,7 @@ module transmitter
   logic ticker = 1'b0;
 
   always_ff @(posedge clk) begin
-    if (sync_count == TxAccMax[TxAccWidth-1:0]) begin
+    if (sync_count == AccMax[AccWidth-1:0]) begin
       sync_count <= 0;
       ticker <= ~ticker;
     end else begin
@@ -37,7 +37,7 @@ module transmitter
     end else begin
       if (!busy && !done && start) begin
         // Start transmission
-        buffer <= in;
+        buffer <= data;
         busy <= 1'b1;
         done <= 1'b0;
         out <= 1'b0;  // send the start bit (low)
@@ -56,7 +56,7 @@ module transmitter
         // Transmission complete
         if (start) begin
           // Start the next transmission
-          buffer <= in;
+          buffer <= data;
           done <= 1'b0;
           out <= 1'b0;
           offset <= 3'b0;
