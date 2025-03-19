@@ -9,9 +9,13 @@
 
 ## Dictionary 
 [Convolution](#Convolution)
+
 [Non-Max Suppression](#Non-Max-Suppression)
+
 [Hysteris](#Hysterisis)
+
 [IO](#IO)
+
 [Vivado Simulation in Terminal/VSCode](#Running-Vivado-Simulation)
 
 # Convolution
