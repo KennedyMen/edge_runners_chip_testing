@@ -1,0 +1,14 @@
+0.7
+2020.2
+Nov  8 2024
+22:36:55
+/home/deck/Documents/Edge_Runner/edge_runners/Non_Max_Suppresion.sv,1742339495,systemVerilog,,/home/deck/Documents/Edge_Runner/edge_runners/arc_tan.sv,,Non_Max_Suppresion,,uvm,,,,,,
+/home/deck/Documents/Edge_Runner/edge_runners/Vivado/Sims/nms_project.sim/sim_1/behav/xsim/glbl.v,1724786425,verilog,,,,glbl,,uvm,,,,,,
+/home/deck/Documents/Edge_Runner/edge_runners/arc_tan.sv,1742333800,systemVerilog,,/home/deck/Documents/Edge_Runner/edge_runners/definitions_pkg.sv,,arc_tan,,uvm,,,,,,
+/home/deck/Documents/Edge_Runner/edge_runners/definitions_pkg.sv,1742333800,systemVerilog,/home/deck/Documents/Edge_Runner/edge_runners/gaussian_filter.sv;/home/deck/Documents/Edge_Runner/edge_runners/gradient_calculation.sv;/home/deck/Documents/Edge_Runner/edge_runners/line_buffer.sv;/home/deck/Documents/Edge_Runner/edge_runners/pixel_loader.sv,/home/deck/Documents/Edge_Runner/edge_runners/gaussian_filter.sv,,definitions_pkg,,uvm,,,,,,
+/home/deck/Documents/Edge_Runner/edge_runners/gaussian_filter.sv,1742333800,systemVerilog,,/home/deck/Documents/Edge_Runner/edge_runners/gradient_calculation.sv,,gaussian_filter,,uvm,,,,,,
+/home/deck/Documents/Edge_Runner/edge_runners/gradient_calculation.sv,1742333800,systemVerilog,,/home/deck/Documents/Edge_Runner/edge_runners/line_buffer.sv,,gradient_calculation,,uvm,,,,,,
+/home/deck/Documents/Edge_Runner/edge_runners/line_buffer.sv,1742333800,systemVerilog,,/home/deck/Documents/Edge_Runner/edge_runners/pixel_loader.sv,,line_buffer,,uvm,,,,,,
+/home/deck/Documents/Edge_Runner/edge_runners/pixel_loader.sv,1742333800,systemVerilog,,/home/deck/Documents/Edge_Runner/edge_runners/sqrt_22b.sv,,pixel_loader,,uvm,,,,,,
+/home/deck/Documents/Edge_Runner/edge_runners/sqrt_22b.sv,1742333800,systemVerilog,,/home/deck/Documents/Edge_Runner/edge_runners/testBench/non_max_suppression_tb.sv,,sqrt_22b,,uvm,,,,,,
+/home/deck/Documents/Edge_Runner/edge_runners/testBench/non_max_suppression_tb.sv,1742339692,systemVerilog,,,,nms_tb,,uvm,,,,,,

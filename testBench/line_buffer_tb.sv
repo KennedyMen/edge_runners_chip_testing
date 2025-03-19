@@ -10,7 +10,7 @@ module line_buffer_tb;
   logic rd_data; 
   logic [23:0] o_data;
 
-  line_buffer lb1 (.clk(clk), .rstN(rstN), .i_data(i_data), .i_data_valid(i_data_valid), .rd_data(rd_data), .o_data(o_data));
+  line_buffer lb1 (.clk(clk), .rstN(rstN), .i_data(i_data), .i_data_valid(i_data_valid), .rd_enable(rd_data), .o_data(o_data));
 
   always #5 clk = ~clk;
 
