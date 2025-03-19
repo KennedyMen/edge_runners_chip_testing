@@ -5,7 +5,7 @@
 |:-------------------------:|:-------------------------:|:-------------------------:|
 <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://i.ibb.co/F4J3Pqw7/gaussian-output.png"> Gaussian|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://i.ibb.co/wNyT2T5f/sobel-output.png">  Sobel  
 | <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://i.ibb.co/fWhmDmv/Outputting.png">Non-Max Suppression |<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://i.ibb.co/v4BzRqvt/direction-contour.png"> Direction
-|
+
 
 ## Dictionary 
 [Convolution](#Convolution)
