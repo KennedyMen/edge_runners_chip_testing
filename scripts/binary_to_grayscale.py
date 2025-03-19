@@ -2,7 +2,6 @@ import os
 import numpy as np
 from PIL import Image
 import argparse
-
 def load_binary_image(binary_image_path, image_shape):
     """Loads a binary file and reshapes it into a grayscale image array."""
     # Read the binary file and reshape into the original image shape (e.g., 512x512)
