@@ -3,8 +3,8 @@
 # SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Tue Mar 18 19:39:56 2025
-# Process ID         : 64344
+# Start of session at: Tue Mar 18 20:40:23 2025
+# Process ID         : 78963
 # Current directory  : /home/deck/Documents/Edge_Runner/edge_runners
 # Command line       : vivado -mode batch -source simulation/create_vivado_project.tcl -journal Vivado/Journals/vivado.jou -log Vivado/Logs/vivado.log
 # Log file           : /home/deck/Documents/Edge_Runner/edge_runners/Vivado/Logs/vivado.log
@@ -13,15 +13,17 @@
 # Platform           : SteamOS
 # Operating System   : SteamOS Holo
 # Processor Detail   : AMD Custom APU 0405
-# CPU Frequency      : 3499.591 MHz
+# CPU Frequency      : 3499.939 MHz
 # CPU Physical cores : 4
 # CPU Logical cores  : 8
 # Host memory        : 15531 MB
 # Swap memory        : 8839 MB
 # Total Virtual      : 24371 MB
-# Available Virtual  : 9576 MB
+# Available Virtual  : 10125 MB
 #-----------------------------------------------------------
 source simulation/create_vivado_project.tcl
+# exec mkdir -p Vivado/Journals
+# exec mkdir -p Vivado/Logs
 # create_project -force nms_project Vivado/Sims -part xc7z020clg484-1
 # add_files /home/deck/Documents/Edge_Runner/edge_runners/testBench/non_max_suppression_tb.sv
 # add_files /home/deck/Documents/Edge_Runner/edge_runners/Non_Max_Suppresion.sv
@@ -33,8 +35,7 @@ source simulation/create_vivado_project.tcl
 # add_files /home/deck/Documents/Edge_Runner/edge_runners/sqrt_22b.sv
 # add_files /home/deck/Documents/Edge_Runner/edge_runners/arc_tan.sv
 # exec mkdir -p Vivado/Sims/nms_project.sim/sim_1/behav/xsim/
-# exec cp -r testImages/images_binary Vivado/Sims/nms_project.sim/sim_1/behav/xsim/testImages/
-# exec cp -r testImages/output_binary Vivado/Sims/nms_project.sim/sim_1/behav/xsim/testImages/
+# exec cp -r /home/deck/Desktop/edge_runners/testImages Vivado/Sims/nms_project.sim/sim_1/behav/xsim/
 # set_property directory Vivado/Sims [get_filesets sim_1]
 # set_property top nms_tb [get_filesets sim_1]
 # launch_simulation
@@ -123,32 +124,21 @@ source nms_tb.tcl
 ## }
 WARNING: [Wavedata 42-489] Can't add object "/nms_tb/image_mem" to the wave window because it has 2097152 bits, which exceeds the display limit of 65536 bits.  To change the display limit, use the command "set_property display_limit <new limit> [current_wave_config]".
 ## run 1000ns
-WARNING: file testImages/images_binary/lena_gray.txt could not be opened
-Error: ERROR: Could not open the text file.
-Time: 0 ps  Iteration: 0  Process: /nms_tb/read_txt_file  Scope: nms_tb.read_txt_file  File: /home/deck/Documents/Edge_Runner/edge_runners/testBench/non_max_suppression_tb.sv Line: 105
-$finish called at time : 0 fs : File "/home/deck/Documents/Edge_Runner/edge_runners/testBench/non_max_suppression_tb.sv" Line 106
+File read complete. Total bytes read: 262144
+run: Time (s): cpu = 00:00:00.68 ; elapsed = 00:00:12 . Memory (MB): peak = 1427.055 ; gain = 0.000 ; free physical = 1463 ; free virtual = 9226
+xsim: Time (s): cpu = 00:00:00.7 ; elapsed = 00:00:14 . Memory (MB): peak = 1427.055 ; gain = 55.840 ; free physical = 1463 ; free virtual = 9226
 INFO: [USF-XSim-96] XSim completed. Design snapshot 'nms_tb_behav' loaded.
 INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1427.020 ; gain = 61.316 ; free physical = 2288 ; free virtual = 8843
+launch_simulation: Time (s): cpu = 00:00:09 ; elapsed = 00:00:23 . Memory (MB): peak = 1427.055 ; gain = 61.316 ; free physical = 1463 ; free virtual = 9226
 # run 2000ns
-ERROR: File descriptor (0) passed to $feof in file /home/deck/Documents/Edge_Runner/edge_runners/testBench/non_max_suppression_tb.sv at line 106 is not valid.
-ERROR: File descriptor (0) passed to $fgetc in file /home/deck/Documents/Edge_Runner/edge_runners/testBench/non_max_suppression_tb.sv at line 106 is not valid.
-File read complete. Total bytes read: 0
-run: Time (s): cpu = 00:00:00.27 ; elapsed = 00:00:22 . Memory (MB): peak = 1427.020 ; gain = 0.000 ; free physical = 2842 ; free virtual = 8826
+run: Time (s): cpu = 00:00:01 ; elapsed = 00:00:22 . Memory (MB): peak = 1427.055 ; gain = 0.000 ; free physical = 1670 ; free virtual = 9359
 # set backup_folder "/home/deck/Documents/Edge_Runner/edge_runners/Backups_logs_journals"
 # exec mkdir -p $backup_folder
 # exec bash -c "find . -name \"*.backup.log\" | xargs -r mv -t $backup_folder"
-mv: './Backups_logs_journals/vivado_57417.backup.log' and '/home/deck/Documents/Edge_Runner/edge_runners/Backups_logs_journals/vivado_57417.backup.log' are the same file
-mv: './Backups_logs_journals/vivado_58037.backup.log' and '/home/deck/Documents/Edge_Runner/edge_runners/Backups_logs_journals/vivado_58037.backup.log' are the same file
-mv: './Backups_logs_journals/vivado_60448.backup.log' and '/home/deck/Documents/Edge_Runner/edge_runners/Backups_logs_journals/vivado_60448.backup.log' are the same file
-mv: './Backups_logs_journals/vivado_59789.backup.log' and '/home/deck/Documents/Edge_Runner/edge_runners/Backups_logs_journals/vivado_59789.backup.log' are the same file
-mv: './Backups_logs_journals/vivado_60784.backup.log' and '/home/deck/Documents/Edge_Runner/edge_runners/Backups_logs_journals/vivado_60784.backup.log' are the same file
-mv: './Backups_logs_journals/vivado_60941.backup.log' and '/home/deck/Documents/Edge_Runner/edge_runners/Backups_logs_journals/vivado_60941.backup.log' are the same file
-mv: './Backups_logs_journals/vivado_58525.backup.log' and '/home/deck/Documents/Edge_Runner/edge_runners/Backups_logs_journals/vivado_58525.backup.log' are the same file
-mv: './Backups_logs_journals/vivado_59155.backup.log' and '/home/deck/Documents/Edge_Runner/edge_runners/Backups_logs_journals/vivado_59155.backup.log' are the same file
-mv: './Backups_logs_journals/vivado_60037.backup.log' and '/home/deck/Documents/Edge_Runner/edge_runners/Backups_logs_journals/vivado_60037.backup.log' are the same file
-    while executing
-"exec bash -c "find . -name \"*.backup.log\" | xargs -r mv -t $backup_folder""
-    (file "simulation/create_vivado_project.tcl" line 41)
-INFO: xsimkernel Simulation Memory Usage: 273128 KB (Peak: 317588 KB), Simulation CPU Usage: 23210 ms
-INFO: [Common 17-206] Exiting Vivado at Tue Mar 18 19:40:37 2025...
+# exec bash -c "find . -name \"*.backup.jou\" | xargs -r mv -t $backup_folder"
+# puts "Simulation complete. Results available in Vivado/Sims"
+Simulation complete. Results available in Vivado/Sims
+# puts "All backup log and journal files have been moved to $backup_folder"
+All backup log and journal files have been moved to /home/deck/Documents/Edge_Runner/edge_runners/Backups_logs_journals
+INFO: xsimkernel Simulation Memory Usage: 273128 KB (Peak: 317588 KB), Simulation CPU Usage: 34090 ms
+INFO: [Common 17-206] Exiting Vivado at Tue Mar 18 20:41:15 2025...

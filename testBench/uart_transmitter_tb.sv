@@ -13,7 +13,7 @@ module uart_transmitter_tb
       .clk(clk),
       .enabled(enabled),
       .start(start),
-      .in(in),
+      .data(in),
       .busy(busy),
       .done(done),
       .out(out)
