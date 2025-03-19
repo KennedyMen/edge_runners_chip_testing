@@ -1,0 +1,10 @@
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/deck/xlinx/Vivado/2024.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot uart_top_tb_behav xil_defaultlib.uart_top_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-5021] port 'txStart' is not connected on this instance [/home/deck/Documents/Edge_Runner/edge_runners/testBench/uart_top_tb.sv:14]
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [/home/deck/Documents/Edge_Runner/edge_runners/uart/receiver.sv:27]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
