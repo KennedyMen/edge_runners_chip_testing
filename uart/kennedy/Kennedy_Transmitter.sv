@@ -1,4 +1,4 @@
-module Transmitter_Mensah
+module Kennedy_Transmitter
   import definitions_pkg::*;
 (
     input logic clk, rstN,  // rx data sampling rate

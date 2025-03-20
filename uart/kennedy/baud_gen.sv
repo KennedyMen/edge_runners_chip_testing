@@ -1,7 +1,7 @@
 module baud_gen
    (
     input  logic clk, reset,
-    input  logic [10:0] divisor, // divisor for the baud rate
+    input  logic [13:0] divisor, // divisor for the baud rate
     output logic tick // tick signal
    );
 
