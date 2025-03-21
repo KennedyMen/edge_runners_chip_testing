@@ -6,11 +6,15 @@ exec mkdir -p Vivado/Logs
 create_project -force uart_project Vivado/Sims -part xc7z020clg484-1
 
 # Add source files
-add_files /home/deck/Documents/Edge_Runner/edge_runners/uart/receiver.sv
-add_files /home/deck/Documents/Edge_Runner/edge_runners/uart/transmitter.sv
-add_files /home/deck/Documents/Edge_Runner/edge_runners/uart/uart.sv
-add_files /home/deck/Documents/Edge_Runner/edge_runners/testBench/uart_top_tb.sv
 add_files /home/deck/Documents/Edge_Runner/edge_runners/definitions_pkg.sv
+add_files /home/deck/Documents/Edge_Runner/edge_runners/uart/kennedy/baud_gen.sv
+add_files /home/deck/Documents/Edge_Runner/edge_runners/uart/kennedy/Divisor.sv
+add_files /home/deck/Documents/Edge_Runner/edge_runners/uart/kennedy/FIFO.sv
+add_files /home/deck/Documents/Edge_Runner/edge_runners/uart/kennedy/Kennedy_receiver.sv
+add_files /home/deck/Documents/Edge_Runner/edge_runners/uart/kennedy/Kennedy_Transmitter.sv
+add_files /home/deck/Documents/Edge_Runner/edge_runners/uart/kennedy/Mensah_UART.sv
+add_files /home/deck/Documents/Edge_Runner/edge_runners/uart/kennedy/Testing/Test_UART_tb.sv
+
 # Create the target directory for the testImages folder
 exec mkdir -p Vivado/Sims/uart_project.sim/sim_1/behav/xsim/
 
@@ -18,7 +22,7 @@ exec mkdir -p Vivado/Sims/uart_project.sim/sim_1/behav/xsim/
 set_property directory Vivado/Sims [get_filesets sim_1]
 
 # Set the top module
-set_property top uart_top_tb [get_filesets sim_1]
+set_property top tb_uart_Split [get_filesets sim_1]
 
 # Launch the simulation
 launch_simulation

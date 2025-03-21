@@ -1,0 +1,12 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  \
+"../../../../../../definitions_pkg.sv" \
+"../../../../../../uart/kennedy/Kennedy_receiver.sv" \
+"../../../../../../uart/kennedy/baud_gen.sv" \
+"../../../../../../uart/kennedy/Testing/Kennedy_receiver_tb.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

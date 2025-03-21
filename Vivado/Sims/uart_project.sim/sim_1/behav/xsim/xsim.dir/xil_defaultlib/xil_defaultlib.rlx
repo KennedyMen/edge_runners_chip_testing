@@ -3,8 +3,7 @@
 Nov  8 2024
 22:36:55
 /home/deck/Documents/Edge_Runner/edge_runners/Vivado/Sims/uart_project.sim/sim_1/behav/xsim/glbl.v,1724786425,verilog,,,,glbl,,uvm,,,,,,
-/home/deck/Documents/Edge_Runner/edge_runners/definitions_pkg.sv,1742412562,systemVerilog,/home/deck/Documents/Edge_Runner/edge_runners/testBench/uart_top_tb.sv;/home/deck/Documents/Edge_Runner/edge_runners/uart/receiver.sv;/home/deck/Documents/Edge_Runner/edge_runners/uart/transmitter.sv;/home/deck/Documents/Edge_Runner/edge_runners/uart/uart.sv,/home/deck/Documents/Edge_Runner/edge_runners/uart/receiver.sv,,definitions_pkg,,uvm,,,,,,
-/home/deck/Documents/Edge_Runner/edge_runners/testBench/uart_top_tb.sv,1742412562,systemVerilog,,,,uart_top_tb,,uvm,,,,,,
-/home/deck/Documents/Edge_Runner/edge_runners/uart/receiver.sv,1742412563,systemVerilog,,/home/deck/Documents/Edge_Runner/edge_runners/uart/transmitter.sv,,receiver,,uvm,,,,,,
-/home/deck/Documents/Edge_Runner/edge_runners/uart/transmitter.sv,1742412563,systemVerilog,,/home/deck/Documents/Edge_Runner/edge_runners/uart/uart.sv,,transmitter,,uvm,,,,,,
-/home/deck/Documents/Edge_Runner/edge_runners/uart/uart.sv,1742412563,systemVerilog,,/home/deck/Documents/Edge_Runner/edge_runners/testBench/uart_top_tb.sv,,uart,,uvm,,,,,,
+/home/deck/Documents/Edge_Runner/edge_runners/definitions_pkg.sv,1742516580,systemVerilog,/home/deck/Documents/Edge_Runner/edge_runners/uart/kennedy/Kennedy_receiver.sv;/home/deck/Documents/Edge_Runner/edge_runners/uart/kennedy/Testing/Kennedy_receiver_tb.sv;/home/deck/Documents/Edge_Runner/edge_runners/uart/kennedy/baud_gen.sv,/home/deck/Documents/Edge_Runner/edge_runners/uart/kennedy/Kennedy_receiver.sv,,definitions_pkg,,uvm,,,,,,
+/home/deck/Documents/Edge_Runner/edge_runners/uart/kennedy/Kennedy_receiver.sv,1742509712,systemVerilog,,/home/deck/Documents/Edge_Runner/edge_runners/uart/kennedy/baud_gen.sv,,Kennedy_Receiver,,uvm,,,,,,
+/home/deck/Documents/Edge_Runner/edge_runners/uart/kennedy/Testing/Kennedy_receiver_tb.sv,1742515201,systemVerilog,,,,tb_Kennedy_Receiver,,uvm,,,,,,
+/home/deck/Documents/Edge_Runner/edge_runners/uart/kennedy/baud_gen.sv,1742513195,systemVerilog,,/home/deck/Documents/Edge_Runner/edge_runners/uart/kennedy/Testing/Kennedy_receiver_tb.sv,,baud_gen,,uvm,,,,,,

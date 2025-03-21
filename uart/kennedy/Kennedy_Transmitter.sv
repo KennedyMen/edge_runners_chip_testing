@@ -21,7 +21,7 @@ typedef enum logic [1:0] {
 state_t state_reg, next_state;
 logic [3:0] s_reg, s_next;
 logic [2:0] n_reg, n_next;
-logic out_reg, out_next;
+logic [7:0] out_reg, out_next;
 logic busy_reg, done_reg, err_reg,tx_reg,tx_next;
 always_ff @(posedge clk or posedge rstN) begin 
     if (rstN) begin

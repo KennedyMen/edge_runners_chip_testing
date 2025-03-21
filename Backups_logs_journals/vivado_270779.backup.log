@@ -1,0 +1,166 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Thu Mar 20 16:53:05 2025
+# Process ID         : 270779
+# Current directory  : /home/deck/Documents/Edge_Runner/edge_runners
+# Command line       : vivado
+# Log file           : /home/deck/Documents/Edge_Runner/edge_runners/vivado.log
+# Journal file       : /home/deck/Documents/Edge_Runner/edge_runners/vivado.jou
+# Running On         : steamdeck
+# Platform           : SteamOS
+# Operating System   : SteamOS Holo
+# Processor Detail   : AMD Custom APU 0405
+# CPU Frequency      : 2317.464 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 15531 MB
+# Swap memory        : 8839 MB
+# Total Virtual      : 24371 MB
+# Available Virtual  : 10942 MB
+#-----------------------------------------------------------
+start_gui
+open_project /home/deck/Documents/Edge_Runner/edge_runners/Vivado/Sims/uart_project.xpr
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory '/home/deck/Documents/Edge_Runner/edge_runners/Vivado/Sims/uart_project.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/deck/xlinx/Vivado/2024.2/data/ip'.
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'uart_tb'
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/deck/Documents/Edge_Runner/edge_runners/Vivado/Sims/uart_project.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/home/deck/xlinx/Vivado/2024.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'uart_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/deck/Documents/Edge_Runner/edge_runners/Vivado/Sims/uart_project.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L uvm -prj uart_tb_vlog.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/deck/Documents/Edge_Runner/edge_runners/Vivado/Sims/uart_project.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot uart_tb_behav xil_defaultlib.uart_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/deck/xlinx/Vivado/2024.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot uart_tb_behav xil_defaultlib.uart_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/deck/Documents/Edge_Runner/edge_runners/Vivado/Sims/uart_project.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "uart_tb_behav -key {Behavioral:sim_1:Functional:uart_tb} -tclbatch {uart_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source uart_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+WARNING: Simulation object /uart_tb/test_data was not traceable in the design for the following reason:
+Vivado Simulator does not support tracing of System Verilog Dynamic Type object.
+WARNING: Simulation object /uart_tb/received_data was not traceable in the design for the following reason:
+Vivado Simulator does not support tracing of System Verilog Dynamic Type object.
+# run 1000ns
+Test 1: Single byte transmission
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'uart_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:11 ; elapsed = 00:00:08 . Memory (MB): peak = 7745.961 ; gain = 99.211 ; free physical = 1802 ; free virtual = 9642
+update_compile_order -fileset sources_1
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ps
+run 10 ps
+run 10 ps
+run 10 ps
+run 10 ps
+run 10 ps
+run 10 ps
+run 10 ps
+run 10 ps
+run 10 ps
+run 10 ps
+run 10 ps
+run 10 ps
+run 10 ps
+run 10 us
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'uart'
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/deck/Documents/Edge_Runner/edge_runners/Vivado/Sims/uart_project.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/home/deck/xlinx/Vivado/2024.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'uart' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/deck/Documents/Edge_Runner/edge_runners/Vivado/Sims/uart_project.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L uvm -prj uart_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/deck/Documents/Edge_Runner/edge_runners/uart/receiver.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module receiver
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/deck/Documents/Edge_Runner/edge_runners/uart/transmitter.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module transmitter
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/deck/Documents/Edge_Runner/edge_runners/uart/uart.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module uart
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/deck/Documents/Edge_Runner/edge_runners/Vivado/Sims/uart_project.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot uart_behav xil_defaultlib.uart xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/deck/xlinx/Vivado/2024.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot uart_behav xil_defaultlib.uart xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [/home/deck/Documents/Edge_Runner/edge_runners/uart/receiver.sv:27]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'/home/deck/Documents/Edge_Runner/edge_runners/Vivado/Sims/uart_project.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/home/deck/Documents/Edge_Runner/edge_runners/Vivado/Sims/uart_project.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Mar 20 16:59:33 2025...

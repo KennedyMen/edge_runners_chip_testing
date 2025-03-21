@@ -1,11 +1,7 @@
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/deck/Documents/Edge_Runner/edge_runners/definitions_pkg.sv" into library xil_defaultlib
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/deck/Documents/Edge_Runner/edge_runners/uart/receiver.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module receiver
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/deck/Documents/Edge_Runner/edge_runners/uart/transmitter.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module transmitter
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/deck/Documents/Edge_Runner/edge_runners/uart/uart.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module uart
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/deck/Documents/Edge_Runner/edge_runners/testBench/uart_top_tb.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module uart_top_tb
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/deck/Documents/Edge_Runner/edge_runners/Vivado/Sims/uart_project.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/deck/Documents/Edge_Runner/edge_runners/uart/kennedy/Kennedy_receiver.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Kennedy_Receiver
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/deck/Documents/Edge_Runner/edge_runners/uart/kennedy/baud_gen.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module baud_gen
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/deck/Documents/Edge_Runner/edge_runners/uart/kennedy/Testing/Kennedy_receiver_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_Kennedy_Receiver

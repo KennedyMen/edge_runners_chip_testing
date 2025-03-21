@@ -1,8 +1,8 @@
-module Kennedy_receiver 
+module Kennedy_Receiver 
   import definitions_pkg::*;
 (
     input logic clk, rstN,  // rx data sampling rate
-    input logic enabled,
+    input logic rx_enabled,
     input logic in,  // rx line
     input logic s_tick,     
     output logic busy,  // transaction is in progress
@@ -23,8 +23,8 @@ logic [3:0] s_reg, s_next;
 logic [2:0] n_reg, n_next;
 logic [7:0] out_reg, out_next;
 logic busy_reg, done_reg, err_reg;
-always_ff @(posedge clk or posedge rstN) begin 
-    if (rstN) begin
+always_ff @(posedge clk) begin 
+    if (!rstN) begin
         state_reg <= IDLE;
         s_reg <= 4'b0;
         n_reg <= 3'b0;
@@ -55,7 +55,7 @@ always_comb begin
 
     case (state_reg) 
         IDLE: begin 
-            if (~in) begin
+            if (~in && rx_enabled) begin
                 next_state = START;
                 busy_reg = 1'b1;
                 s_next = 4'b0;

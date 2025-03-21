@@ -1,10 +1,20 @@
 Vivado Simulator v2024.2.0
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: /home/deck/xlinx/Vivado/2024.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot uart_top_tb_behav xil_defaultlib.uart_top_tb xil_defaultlib.glbl -log elaborate.log 
+Running: /home/deck/xlinx/Vivado/2024.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_Kennedy_Receiver_behav xil_defaultlib.tb_Kennedy_Receiver xil_defaultlib.glbl -log elaborate.log 
 Using 8 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-5021] port 'txStart' is not connected on this instance [/home/deck/Documents/Edge_Runner/edge_runners/testBench/uart_top_tb.sv:14]
-ERROR: [VRFC 10-1219] part-select direction is opposite from prefix index direction [/home/deck/Documents/Edge_Runner/edge_runners/uart/receiver.sv:27]
-ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 18 for port 'divisor' [/home/deck/Documents/Edge_Runner/edge_runners/uart/kennedy/Testing/Kennedy_receiver_tb.sv:33]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "/home/deck/Documents/Edge_Runner/edge_runners/Vivado/Sims/uart_project.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/deck/Documents/Edge_Runner/edge_runners/Vivado/Sims/uart_project.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.definitions_pkg
+Compiling module xil_defaultlib.Kennedy_Receiver
+Compiling module xil_defaultlib.baud_gen
+Compiling module xil_defaultlib.tb_Kennedy_Receiver
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_Kennedy_Receiver_behav
