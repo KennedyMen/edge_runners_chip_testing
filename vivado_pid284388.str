@@ -17847,3 +17847,5 @@ selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); //
 // Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 02h:46m:54s
 // [Engine Memory]: 4,443 MB (+3228kb) [02:47:08]
 // Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 02h:46m:58s
+// HMemoryUtils.trashcanNow. Engine heap size: 4,443 MB. GUI used memory: 113 MB. Current time: 3/20/25, 8:40:18 PM EDT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
