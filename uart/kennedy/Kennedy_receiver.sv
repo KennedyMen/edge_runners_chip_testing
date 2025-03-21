@@ -66,6 +66,7 @@ always_comb begin
                 if (s_reg == HOLD_TIME) begin
                     next_state = DATA;
                     n_next = 3'b0;
+                    s_next = 4'b0;
                 end
                 else begin
                     s_next = s_reg + 1'b1;

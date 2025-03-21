@@ -1,9 +1,5 @@
 module tb_Kennedy_Receiver;
     import definitions_pkg::*;
-
-    // Parameters
-    parameter CLOCK_PERIOD = 50; // Clock period in nanoseconds
-    parameter DIVISOR = 5; // Tick period in nanoseconds
     // Signals
     logic clk;
     logic rstN;
@@ -36,7 +32,7 @@ module tb_Kennedy_Receiver;
     // Clock generation
     initial begin
         clk = 0;
-        forever #(CLOCK_PERIOD / 2) clk = ~clk;
+        forever #(CLOCK_PERIOD_NANOS / 2) clk = ~clk;
     end
 
     // Baud rate tick generation
@@ -51,7 +47,7 @@ module tb_Kennedy_Receiver;
 
         // Apply reset
         rstN = 0;
-        #(CLOCK_PERIOD * 100);
+        #(CLOCK_PERIOD_NANOS * 100);
         rstN = 1;
 
         // Enable the receiver
@@ -86,15 +82,15 @@ module tb_Kennedy_Receiver;
         integer i;
         // Start bit
         in = 0;
-        #(CLOCK_PERIOD * DIVISOR * 16);
+        #(CLOCK_PERIOD_NANOS * DIVISOR * 16);
         // Data bits
         for (i = 0; i < 8; i = i + 1) begin
             in = bytei[i];
-            #(CLOCK_PERIOD * DIVISOR * 16);
+            #(CLOCK_PERIOD_NANOS * DIVISOR * 16);
         end
         // Stop bit
         in = 1;
-        #(CLOCK_PERIOD * DIVISOR * 32 );
+        #(CLOCK_PERIOD_NANOS * DIVISOR * 32 );
     endtask
 
 endmodule

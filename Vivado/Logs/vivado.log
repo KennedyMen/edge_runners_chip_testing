@@ -3,8 +3,8 @@
 # SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Thu Mar 20 17:47:01 2025
-# Process ID         : 284053
+# Start of session at: Thu Mar 20 21:20:00 2025
+# Process ID         : 325131
 # Current directory  : /home/deck/Documents/Edge_Runner/edge_runners
 # Command line       : vivado -mode batch -source simulation/Receiver.tcl -journal Vivado/Journals/vivado.jou -log Vivado/Logs/vivado.log
 # Log file           : /home/deck/Documents/Edge_Runner/edge_runners/Vivado/Logs/vivado.log
@@ -13,13 +13,13 @@
 # Platform           : SteamOS
 # Operating System   : SteamOS Holo
 # Processor Detail   : AMD Custom APU 0405
-# CPU Frequency      : 3499.668 MHz
+# CPU Frequency      : 3453.787 MHz
 # CPU Physical cores : 4
 # CPU Logical cores  : 8
 # Host memory        : 15531 MB
 # Swap memory        : 8839 MB
 # Total Virtual      : 24371 MB
-# Available Virtual  : 9498 MB
+# Available Virtual  : 10079 MB
 #-----------------------------------------------------------
 source simulation/Receiver.tcl
 # exec mkdir -p Vivado/Journals
@@ -52,13 +52,15 @@ xvlog --incr --relax -L uvm -prj tb_Kennedy_Receiver_vlog.prj
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/deck/Documents/Edge_Runner/edge_runners/definitions_pkg.sv" into library xil_defaultlib
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/deck/Documents/Edge_Runner/edge_runners/uart/kennedy/Kennedy_receiver.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Kennedy_Receiver
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/deck/Documents/Edge_Runner/edge_runners/uart/kennedy/baud_gen.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module baud_gen
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/deck/Documents/Edge_Runner/edge_runners/uart/kennedy/Testing/Kennedy_receiver_tb.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module tb_Kennedy_Receiver
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/deck/Documents/Edge_Runner/edge_runners/Vivado/Sims/uart_project.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module glbl
 Waiting for jobs to finish...
 No pending jobs, compilation finished.
-INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
 INFO: [USF-XSim-3] XSim::Elaborate design
 INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/deck/Documents/Edge_Runner/edge_runners/Vivado/Sims/uart_project.sim/sim_1/behav/xsim'
 xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_Kennedy_Receiver_behav xil_defaultlib.tb_Kennedy_Receiver xil_defaultlib.glbl -log elaborate.log
@@ -69,6 +71,7 @@ Running: /home/deck/xlinx/Vivado/2024.2/bin/unwrapped/lnx64.o/xelab --incr --deb
 Using 8 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 3 for port 'divisor' [/home/deck/Documents/Edge_Runner/edge_runners/uart/kennedy/Testing/Kennedy_receiver_tb.sv:29]
 Completed static elaboration
 Starting simulation data flow analysis
 WARNING: [XSIM 43-4100] "/home/deck/Documents/Edge_Runner/edge_runners/Vivado/Sims/uart_project.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
@@ -77,6 +80,7 @@ Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling package xil_defaultlib.definitions_pkg
 Compiling module xil_defaultlib.Kennedy_Receiver
+Compiling module xil_defaultlib.baud_gen
 Compiling module xil_defaultlib.tb_Kennedy_Receiver
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot tb_Kennedy_Receiver_behav
@@ -100,28 +104,29 @@ source tb_Kennedy_Receiver.tcl
 ## run 1000ns
 INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_Kennedy_Receiver_behav' loaded.
 INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1490.566 ; gain = 61.316 ; free physical = 2977 ; free virtual = 8631
+launch_simulation: Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 1424.055 ; gain = 61.316 ; free physical = 2700 ; free virtual = 9190
 # run 10000ns
 # set backup_folder "/home/deck/Documents/Edge_Runner/edge_runners/Backups_logs_journals"
 # exec mkdir -p $backup_folder
 # exec bash -c "find . -name \"*.backup.log\" | xargs -r mv -t $backup_folder"
-mv: './Backups_logs_journals/vivado_278751.backup.log' and '/home/deck/Documents/Edge_Runner/edge_runners/Backups_logs_journals/vivado_278751.backup.log' are the same file
-mv: './Backups_logs_journals/vivado_276155.backup.log' and '/home/deck/Documents/Edge_Runner/edge_runners/Backups_logs_journals/vivado_276155.backup.log' are the same file
-mv: './Backups_logs_journals/vivado_272941.backup.log' and '/home/deck/Documents/Edge_Runner/edge_runners/Backups_logs_journals/vivado_272941.backup.log' are the same file
-mv: './Backups_logs_journals/vivado_270779.backup.log' and '/home/deck/Documents/Edge_Runner/edge_runners/Backups_logs_journals/vivado_270779.backup.log' are the same file
-mv: './Backups_logs_journals/vivado_274658.backup.log' and '/home/deck/Documents/Edge_Runner/edge_runners/Backups_logs_journals/vivado_274658.backup.log' are the same file
-mv: './Backups_logs_journals/vivado_274078.backup.log' and '/home/deck/Documents/Edge_Runner/edge_runners/Backups_logs_journals/vivado_274078.backup.log' are the same file
-mv: './Backups_logs_journals/vivado_275048.backup.log' and '/home/deck/Documents/Edge_Runner/edge_runners/Backups_logs_journals/vivado_275048.backup.log' are the same file
-mv: './Backups_logs_journals/vivado_277166.backup.log' and '/home/deck/Documents/Edge_Runner/edge_runners/Backups_logs_journals/vivado_277166.backup.log' are the same file
-mv: './Backups_logs_journals/vivado_273779.backup.log' and '/home/deck/Documents/Edge_Runner/edge_runners/Backups_logs_journals/vivado_273779.backup.log' are the same file
-mv: './Backups_logs_journals/vivado_279062.backup.log' and '/home/deck/Documents/Edge_Runner/edge_runners/Backups_logs_journals/vivado_279062.backup.log' are the same file
-mv: './Backups_logs_journals/vivado_272515.backup.log' and '/home/deck/Documents/Edge_Runner/edge_runners/Backups_logs_journals/vivado_272515.backup.log' are the same file
-mv: './Backups_logs_journals/vivado_281146.backup.log' and '/home/deck/Documents/Edge_Runner/edge_runners/Backups_logs_journals/vivado_281146.backup.log' are the same file
-mv: './Backups_logs_journals/vivado_267165.backup.log' and '/home/deck/Documents/Edge_Runner/edge_runners/Backups_logs_journals/vivado_267165.backup.log' are the same file
-mv: './Backups_logs_journals/vivado_276532.backup.log' and '/home/deck/Documents/Edge_Runner/edge_runners/Backups_logs_journals/vivado_276532.backup.log' are the same file
-mv: './Backups_logs_journals/vivado_275386.backup.log' and '/home/deck/Documents/Edge_Runner/edge_runners/Backups_logs_journals/vivado_275386.backup.log' are the same file
-mv: './Backups_logs_journals/vivado_277468.backup.log' and '/home/deck/Documents/Edge_Runner/edge_runners/Backups_logs_journals/vivado_277468.backup.log' are the same file
-    while executing
-"exec bash -c "find . -name \"*.backup.log\" | xargs -r mv -t $backup_folder""
-    (file "simulation/Receiver.tcl" line 41)
-INFO: [Common 17-206] Exiting Vivado at Thu Mar 20 17:47:16 2025...
+# exec bash -c "find . -name \"*.backup.jou\" | xargs -r mv -t $backup_folder"
+# puts "Simulation complete. Results available in Vivado/Sims"
+Simulation complete. Results available in Vivado/Sims
+# puts "All backup log and journal files have been moved to $backup_folder"
+All backup log and journal files have been moved to /home/deck/Documents/Edge_Runner/edge_runners/Backups_logs_journals
+# set waveform_file "Vivado/Sims/uart_project.sim/sim_1/behav/xsim/xsim.wdb"
+# if {[file exists $waveform_file]} {
+#     puts "Opening waveform..."
+#     open_wave -file $waveform_file
+# 
+#     # Add all signals from the Kennedy_Receiver module to the waveform
+#     add_wave -position end -radix hexadecimal [get_objects -filter {name =~ "uut/*"}]
+# 
+#     # Run the simulation again to capture the waveform
+#     restart
+#     run 10000ns
+# } else {
+#     puts "No waveform file found. Please check if the simulation generated the waveform."
+# }
+No waveform file found. Please check if the simulation generated the waveform.
+INFO: [Common 17-206] Exiting Vivado at Thu Mar 20 21:20:16 2025...

@@ -28,37 +28,32 @@ set_property top tb_Kennedy_Receiver [get_filesets sim_1]
 # Launch the simulation
 launch_simulation
 
-# Run the simulation for 10000ns
-run 10000ns
+# Run the simulation for 150000ns
+run 150000ns
 
 # Define the backup folder for logs and journal files
-set backup_folder "/home/deck/Documents/Edge_Runner/edge_runners/Backups_logs_journals"
 
 # Create the backup folder if it doesn't exist
-exec mkdir -p $backup_folder
 
 # Move all backup log and journal files to the backup folder - with error handling
-exec bash -c "find . -name \"*.backup.log\" | xargs -r mv -t $backup_folder"
-exec bash -c "find . -name \"*.backup.jou\" | xargs -r mv -t $backup_folder"
 
 puts "Simulation complete. Results available in Vivado/Sims"
 puts "All backup log and journal files have been moved to $backup_folder"
 
-# Open the waveform viewer if a waveform file exists
-# The waveform database file is typically named 'xsim.wdb'
-# Check if the .wdb file exists and then open it
-set waveform_file "Vivado/Sims/uart_project.sim/sim_1/behav/xsim/xsim.wdb"
+# Prompt user about opening waveform
+puts -nonewline "Would you like to open the waveform viewer? (y/n): "
+flush stdout
+gets stdin response
 
-if {[file exists $waveform_file]} {
-    puts "Opening waveform..."
-    open_wave -file $waveform_file
-
-    # Add all signals from the Kennedy_Receiver module to the waveform
-    add_wave -position end -radix hexadecimal [get_objects -filter {name =~ "uut/*"}]
-
-    # Run the simulation again to capture the waveform
-    restart
-    run 10000ns
-} else {
-    puts "No waveform file found. Please check if the simulation generated the waveform."
+if {[string tolower $response] == "y" || [string tolower $response] == "yes"} {
+    # Open the waveform viewer
+    if {[file exists [current_sim]/xsim.wdb]} {
+        open_wave_database [current_sim]/xsim.wdb
+        display_wave -open_wave_config {}
+        puts "Waveform viewer opened successfully."
+    } else {
+        puts "Error: Waveform database file not found."
+    }
 }
+
+puts "Script completed. You can now enter additional commands."

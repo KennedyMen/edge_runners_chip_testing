@@ -28,7 +28,7 @@ set_property top tb_uart_Split [get_filesets sim_1]
 launch_simulation
 
 # Run the simulation
-run 2000ns
+run 1400000ns
 
 # Define the backup folder for logs and journal files
 set backup_folder "/home/deck/Documents/Edge_Runner/edge_runners/Backups_logs_journals"

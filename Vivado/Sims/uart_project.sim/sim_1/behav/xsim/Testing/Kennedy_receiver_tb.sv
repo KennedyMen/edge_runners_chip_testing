@@ -1,9 +1,5 @@
 module tb_Kennedy_Receiver;
     import definitions_pkg::*;
-
-    // Parameters
-    parameter CLOCK_PERIOD = 1_000_000_000 / CLOCK_RATE; // Clock period in nanoseconds
-
     // Signals
     logic clk;
     logic rstN;
@@ -27,18 +23,20 @@ module tb_Kennedy_Receiver;
         .err(err),
         .out(out)
     );
-
+    baud_gen baud_gen_inst (
+        .clk(clk),
+        .reset(rstN),
+        .divisor(DIVISOR),
+        .tick(s_tick)
+    );
     // Clock generation
     initial begin
         clk = 0;
-        forever #(CLOCK_PERIOD / 2) clk = ~clk;
+        forever #(CLOCK_PERIOD_NANOS / 2) clk = ~clk;
     end
 
     // Baud rate tick generation
-    initial begin
-        s_tick = 0;
-        forever #(CLOCK_PERIOD / OVERSAMPLE_RATE) s_tick = ~s_tick;
-    end
+
 
     // Test procedure
     initial begin
@@ -49,7 +47,7 @@ module tb_Kennedy_Receiver;
 
         // Apply reset
         rstN = 0;
-        #(CLOCK_PERIOD * 10);
+        #(CLOCK_PERIOD_NANOS * 100);
         rstN = 1;
 
         // Enable the receiver
@@ -84,15 +82,15 @@ module tb_Kennedy_Receiver;
         integer i;
         // Start bit
         in = 0;
-        #(CLOCK_PERIOD * OVERSAMPLE_RATE);
+        #(CLOCK_PERIOD_NANOS * DIVISOR * 16);
         // Data bits
         for (i = 0; i < 8; i = i + 1) begin
             in = bytei[i];
-            #(CLOCK_PERIOD * OVERSAMPLE_RATE);
+            #(CLOCK_PERIOD_NANOS * DIVISOR * 16);
         end
         // Stop bit
         in = 1;
-        #(CLOCK_PERIOD * OVERSAMPLE_RATE);
+        #(CLOCK_PERIOD_NANOS * DIVISOR * 32 );
     endtask
 
 endmodule
