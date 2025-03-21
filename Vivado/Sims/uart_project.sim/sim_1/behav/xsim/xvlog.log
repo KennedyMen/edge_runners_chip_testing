@@ -1,7 +1,0 @@
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/deck/Documents/Edge_Runner/edge_runners/definitions_pkg.sv" into library xil_defaultlib
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/deck/Documents/Edge_Runner/edge_runners/uart/kennedy/Kennedy_Transmitter.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Kennedy_Transmitter
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/deck/Documents/Edge_Runner/edge_runners/uart/kennedy/baud_gen.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module baud_gen
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/deck/Documents/Edge_Runner/edge_runners/uart/kennedy/Testing/Kennedy_transmitter_tb.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tb_Kennedy_Transmitter

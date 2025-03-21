@@ -7,14 +7,4 @@ Starting static elaboration
 Pass Through NonSizing Optimizer
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 3 for port 'divisor' [/home/deck/Documents/Edge_Runner/edge_runners/uart/kennedy/Testing/Kennedy_transmitter_tb.sv:31]
 Completed static elaboration
-Starting simulation data flow analysis
-WARNING: [XSIM 43-4100] "/home/deck/Documents/Edge_Runner/edge_runners/Vivado/Sims/uart_project.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
-WARNING: [XSIM 43-4100] "/home/deck/Documents/Edge_Runner/edge_runners/Vivado/Sims/uart_project.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling package xil_defaultlib.definitions_pkg
-Compiling module xil_defaultlib.Kennedy_Transmitter
-Compiling module xil_defaultlib.baud_gen
-Compiling module xil_defaultlib.tb_Kennedy_Transmitter
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot tb_Kennedy_Transmitter_behav
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
