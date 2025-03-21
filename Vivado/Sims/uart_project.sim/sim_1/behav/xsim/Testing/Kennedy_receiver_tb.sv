@@ -20,7 +20,6 @@ module tb_Kennedy_Receiver;
         .s_tick(s_tick),
         .busy(busy),
         .done(done),
-        .err(err),
         .out(out)
     );
     baud_gen baud_gen_inst (
@@ -82,15 +81,15 @@ module tb_Kennedy_Receiver;
         integer i;
         // Start bit
         in = 0;
-        #(CLOCK_PERIOD_NANOS * DIVISOR * 16);
+        #(CLOCK_PERIOD_NANOS * DIVISOR * OVERSAMPLE_RATE);
         // Data bits
         for (i = 0; i < 8; i = i + 1) begin
             in = bytei[i];
-            #(CLOCK_PERIOD_NANOS * DIVISOR * 16);
+            #(CLOCK_PERIOD_NANOS * DIVISOR * OVERSAMPLE_RATE);
         end
         // Stop bit
         in = 1;
-        #(CLOCK_PERIOD_NANOS * DIVISOR * 32 );
+        #(CLOCK_PERIOD_NANOS * DIVISOR * OVERSAMPLE_RATE);
     endtask
 
 endmodule

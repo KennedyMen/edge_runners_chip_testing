@@ -6,7 +6,7 @@ package definitions_pkg;
   // The clock period of the board
   parameter int CLOCK_PERIOD_NANOS = 1000000000 / CLOCK_RATE;
   // The baud rate of the UART interface
-  parameter BAUD_RATE = 625000;
+  parameter BAUD_RATE = 115200;
   //Width of the baud rate
   parameter int BAUD_RATE_WIDTH = $clog2(BAUD_RATE);
   // The oversample rate of the UART interface

@@ -24,7 +24,7 @@ logic [2:0] n_reg, n_next;
 logic [7:0] out_reg, out_next;
 logic busy_reg, done_reg, err_reg,tx_reg,tx_next;
 always_ff @(posedge clk or posedge rstN) begin 
-    if (rstN) begin
+    if (!rstN) begin
         state_reg <= IDLE;
         s_reg <= 4'b0;
         n_reg <= 3'b0;
@@ -68,7 +68,7 @@ always_comb begin
         START: begin
             tx_next = 1'b0;
             if (s_tick) begin
-                if (s_reg == OVERSAMPLE_RATE) begin
+                if (s_reg == OVERSAMPLE_RATE-1) begin
                     next_state = DATA;
                     n_next = 3'b0;
                     s_next = 4'b0;
@@ -79,32 +79,33 @@ always_comb begin
             end
         end
         DATA: begin
+            tx_next = out_reg[0];
             if (s_tick) begin
                 if (s_reg == OVERSAMPLE_RATE - 1) begin
-                    out_next = out_reg >> 1'b1;
+                    out_next = out_reg >> 1;
                     s_next = 4'b0;
-                    if (n_reg == 3'b111) begin
+                    if (n_reg == 7) begin
                         next_state = STOP;
                     end
                     else begin
-                        n_next = n_reg + 1'b1;
+                        n_next = n_reg + 1;
                     end
                 end
                 else begin
-                    s_next = s_reg + 1'b1;
+                    s_next = s_reg + 1;
                 end
             end
         end
         STOP: begin
-            tx_next = 1'b1;
+            tx_next = 1;
             if (s_tick) begin
                 if (s_reg == OVERSAMPLE_RATE - 1) begin
                     next_state = IDLE;
-                    done_reg = 1'b1;
-                    busy_reg = 1'b0;
+                    done_reg = 1;
+                    busy_reg = 1;
                 end
                 else begin
-                    s_next = s_reg + 1'b1;
+                    s_next = s_reg + 1;
                 end
             end
         end

@@ -7,7 +7,6 @@ module Kennedy_Receiver
     input logic s_tick,     
     output logic busy,  // transaction is in progress
     output logic done,  // end of transaction
-    output logic err,  // error while receiving data
     output logic [7:0] out  // the received data assembled in parallel form
 );
 
@@ -22,7 +21,7 @@ state_t state_reg, next_state;
 logic [3:0] s_reg, s_next;
 logic [2:0] n_reg, n_next;
 logic [7:0] out_reg, out_next;
-logic busy_reg, done_reg, err_reg;
+logic busy_reg, done_reg ;
 always_ff @(posedge clk) begin 
     if (!rstN) begin
         state_reg <= IDLE;
@@ -31,7 +30,6 @@ always_ff @(posedge clk) begin
         out_reg <= 8'b0;
         busy <= 1'b0;
         done <= 1'b0;
-        err <= 1'b0;
     end 
     else begin
         state_reg <= next_state;
@@ -40,7 +38,6 @@ always_ff @(posedge clk) begin
         out_reg <= out_next;
         busy <= busy_reg;
         done <= done_reg;
-        err <= err_reg;
     end
 end 
 
@@ -49,9 +46,6 @@ always_comb begin
     s_next = s_reg;
     n_next = n_reg;
     out_next = out_reg;
-    busy_reg = 1'b0;
-    done_reg = 1'b0;
-    err_reg = 1'b0;
 
     case (state_reg) 
         IDLE: begin 
@@ -59,6 +53,7 @@ always_comb begin
                 next_state = START;
                 busy_reg = 1'b1;
                 s_next = 4'b0;
+                done_reg = 1'b0; 
             end
         end 
         START: begin
