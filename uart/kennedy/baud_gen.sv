@@ -20,4 +20,4 @@ module baud_gen
    assign r_next = (r_reg == divisor) ? 1 : r_reg + 1;
    assign tick = r_reg == divisor;
    end 
-endmodule
+   endmodule
