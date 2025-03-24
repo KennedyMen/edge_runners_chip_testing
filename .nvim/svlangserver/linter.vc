@@ -1,0 +1,19 @@
+-v /home/deck/Documents/Projects/Verilog/edge_runners/definitions_pkg.sv
++incdir+/home/deck/Documents/Projects/Verilog/edge_runners
++incdir+/home/deck/Documents/Projects/Verilog/edge_runners/testBench
++incdir+/home/deck/Documents/Projects/Verilog/edge_runners/uart/kennedy
++incdir+/home/deck/Documents/Projects/Verilog/edge_runners/uart/kennedy/Testing
++incdir+/home/deck/Documents/Projects/Verilog/edge_runners/uart
++incdir+/home/deck/Documents/Projects/Verilog/edge_runners/Vivado/Sims/nms_project.sim/sim_1/behav/xsim
++incdir+/home/deck/Documents/Projects/Verilog/edge_runners/Vivado/Sims/nms_project.sim/sim_1/behav/xsim/Testing
++incdir+/home/deck/Documents/Projects/Verilog/edge_runners/Vivado/Sims/uart_project.sim/sim_1/behav/xsim
++incdir+/home/deck/Documents/Projects/Verilog/edge_runners/Vivado/Sims/uart_project.sim/sim_1/behav/xsim/Testing
++incdir+/home/deck/Documents/Projects/Verilog/edge_runners
++incdir+/home/deck/Documents/Projects/Verilog/edge_runners/testBench
++incdir+/home/deck/Documents/Projects/Verilog/edge_runners/uart/kennedy
++incdir+/home/deck/Documents/Projects/Verilog/edge_runners/uart/kennedy/Testing
++incdir+/home/deck/Documents/Projects/Verilog/edge_runners/uart
++incdir+/home/deck/Documents/Projects/Verilog/edge_runners/Vivado/Sims/nms_project.sim/sim_1/behav/xsim
++incdir+/home/deck/Documents/Projects/Verilog/edge_runners/Vivado/Sims/nms_project.sim/sim_1/behav/xsim/Testing
++incdir+/home/deck/Documents/Projects/Verilog/edge_runners/Vivado/Sims/uart_project.sim/sim_1/behav/xsim
++incdir+/home/deck/Documents/Projects/Verilog/edge_runners/Vivado/Sims/uart_project.sim/sim_1/behav/xsim/Testing
