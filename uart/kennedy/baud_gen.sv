@@ -1,7 +1,7 @@
 module baud_gen
    import definitions_pkg::*;
    (
-    input  logic clk, reset,
+    input  logic clk, rstN,
     input  logic [2:0] divisor, // divisor for the baud rate
     output logic tick // tick signal
    );
@@ -10,8 +10,8 @@ module baud_gen
    logic [10:0] r_next;
 
 
-   always_ff @(posedge clk or posedge reset) begin
-      if (!reset) begin
+   always_ff @(posedge clk , negedge rstN) begin
+      if (!rstN) begin
          r_reg <= 11'd0;
       end
        else begin

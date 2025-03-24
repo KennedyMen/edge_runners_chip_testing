@@ -42,5 +42,4 @@ module non_max_suppression
       end
     endcase
   end
-  
 endmodule: non_max_suppression
