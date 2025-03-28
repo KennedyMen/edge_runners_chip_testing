@@ -1,7 +1,7 @@
 # Create the Vivado/Journals and Vivado/Logs directories if they do not exist
 file mkdir ./Vivado/Journals
 file mkdir ./Vivado/Logs
-
+file mkdir /Vivado/Sims
 # Create a new project in the same directory as this script
 create_project -force nms_project Vivado/Sims -part xc7z020clg484-1
 

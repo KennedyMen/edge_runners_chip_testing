@@ -19,12 +19,13 @@ module pixel_loader
   logic [1:0] curr_rd_buffer;
   logic [3:0] rd_buffer_data_valid;
   logic [3*ITEM_SIZE-1:0] buffer0_out, buffer1_out, buffer2_out, buffer3_out;
+  logic [$clog2(IMAGE_WIDTH)-1:0] row_counter;
 
   typedef enum logic [0:0]  {
                               IDLE = 1'b0,
                               READ = 1'b1
                             } rd_buffer_enable_t;
-
+  
   rd_buffer_enable_t curr_state;
 
   // pixel counter for write buffer switch every 512 pixels
@@ -57,21 +58,31 @@ module pixel_loader
       buffer_pixel_count <= '0;
     end
     else begin
-      if (pixel_in_valid & !rd_buffer_enable)
+      if (pixel_in_valid & !rd_buffer_enable) 
         buffer_pixel_count <= buffer_pixel_count + 1;
-      else if (!pixel_in_valid & rd_buffer_enable)
+      else if (!pixel_in_valid & rd_buffer_enable) 
         buffer_pixel_count <= buffer_pixel_count - 1;
+    end
+  end
+
+  // sequential block to count the number of image rows that have been read
+  always @(posedge clk) begin
+    if (!rstN) begin
+      row_counter <= '0;
+    end
+    else if (rd_counter == 511) begin
+      row_counter <= row_counter + 1;
     end
   end
 
   // state machine for rd_buffer_enable signal
   always @(posedge clk) begin
-    if (!rstN) begin
+    if (!rstN) begin 
       curr_state <= IDLE;
       rd_buffer_enable <= '0;
     end
-    else begin
-      case (curr_state)
+    else begin       
+      case (curr_state) 
         IDLE: begin
           if (buffer_pixel_count >= 1536) begin
             rd_buffer_enable <= 1'b1;

@@ -5,7 +5,7 @@ module gradient_calculation
     input   logic         rstN,
     input   logic [71:0]  gradient_data_in,
     input   logic         gradient_data_in_valid,
-    output  logic [10:0]   gradient_magnitude,
+    output  logic [10:0]  gradient_magnitude,
     output  logic [1:0]   gradient_direction,
     output  logic         gradient_out_valid,
     output  logic [7:0]   pixel_out,
