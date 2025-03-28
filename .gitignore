@@ -1,10 +1,10 @@
-.vscode/
-.dvt/
 __pycache__/
+.nvim/
 .venv/
 .Xil/
+Vivado/
 Backup_logs_journals/
 dvt_build.log
 dvt_build.log
-.nvim/
-Verilog/
+dvt_build.log
+.dvt/

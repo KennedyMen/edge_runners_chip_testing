@@ -2,6 +2,7 @@
 -v /home/deck/Documents/Projects/Verilog/edge_runners/definitions_pkg.sv
 +incdir+/home/deck/Documents/Projects/Verilog/edge_runners
 +incdir+/home/deck/Documents/Projects/Verilog/edge_runners/cadence_rtl
++incdir+/home/deck/Documents/Projects/Verilog/edge_runners/cadence_rtl/testbench samples - aayush
 +incdir+/home/deck/Documents/Projects/Verilog/edge_runners/cadence_rtl/testbenches
 +incdir+/home/deck/Documents/Projects/Verilog/edge_runners/cadence_rtl/uart
 +incdir+/home/deck/Documents/Projects/Verilog/edge_runners/cadence_rtl/uart/fifo
@@ -13,6 +14,7 @@
 +incdir+/home/deck/Documents/Projects/Verilog/edge_runners/Vivado/Sims/uart_project.sim/sim_1/behav/xsim/Testing
 +incdir+/home/deck/Documents/Projects/Verilog/edge_runners
 +incdir+/home/deck/Documents/Projects/Verilog/edge_runners/cadence_rtl
++incdir+/home/deck/Documents/Projects/Verilog/edge_runners/cadence_rtl/testbench samples - aayush
 +incdir+/home/deck/Documents/Projects/Verilog/edge_runners/cadence_rtl/testbenches
 +incdir+/home/deck/Documents/Projects/Verilog/edge_runners/cadence_rtl/uart
 +incdir+/home/deck/Documents/Projects/Verilog/edge_runners/cadence_rtl/uart/fifo
