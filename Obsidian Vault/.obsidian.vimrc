@@ -23,3 +23,12 @@ nmap zm :foldmore<CR>
 " Right arrow: fold less (expand one level)
 nmap <Left>  :foldmore<CR>
 nmap <Right> :foldreduce<CR>
+" Make Alt-Enter follow link
+exmap followLink obcommand editor:follow-link
+nmap &c& :followLink
+nmap <A-CR> lBl&c&
+" Fix for unfolding of folded lines when curor is hovered over
+exmap upSkipFold jsfile mdHelpers.js {moveUpSkipFold()}
+exmap downSkipFold jsfile mdHelpers.js {moveDownSkipFold()}
+nmap k :upSkipFold<CR>
+nmap j :downSkipFold<CR>

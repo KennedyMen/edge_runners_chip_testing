@@ -65,7 +65,6 @@ frankly same issue. we need to create a kernel where the entirety of the kernel 
 ## Double Threshold
 ![[Pasted image 20250329131528.png]]
 basically it another necessary 768 magnitude kernel
-
 ## Gaussian Filter 
 ![[Pasted image 20250329133110.png]]
 the problem is again the width of the sum_data unfortunately you just can't get a value taking up 16 bits the maximum that it could be is 12 bits this is another bit width change 
@@ -82,7 +81,7 @@ also reset
 Ok so we've got some real issues here regarding actual building of the gradient data as our edge cases just will not work properly 
 ![[Pasted image 20250329134416.png]]
 
-**square_data_x&y** we have a major issue the width is actually too short the maximum num number we can get for the square data is 
+**square_data_x&y** we have a major issue the width is actually too short the maximum we can get for the square data is 
 $$
 \begin{flalign*}
     \text{square\_data} &= \text{sum\_data\_x}^2 \\ 

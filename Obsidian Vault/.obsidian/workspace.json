@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "1c2f032e06a8b824",
+        "id": "ba1daa2926ddea17",
         "type": "tabs",
         "children": [
           {
-            "id": "81073a2c59c707d8",
+            "id": "b379b73ad6b95603",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Obsidian Vault/Code Coverage Editiing/UART Module.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "UART Module"
+              "title": "New tab"
             }
           }
         ]
@@ -168,16 +164,18 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "81073a2c59c707d8",
+  "active": "b379b73ad6b95603",
   "lastOpenFiles": [
-    "Obsidian Vault/Code Coverage Editiing/images/Pasted image 20250328225651.png",
+    "Obsidian Vault/Code Coverage Editiing/Solution.md",
     "Obsidian Vault/Code Coverage Editiing/UART Module.md",
+    "Obsidian Vault/Code Coverage Editiing/Canny Edge Module.md",
+    "mdHelpers.js",
+    "Obsidian Vault/Code Coverage Editiing/images/Pasted image 20250328225651.png",
     "Obsidian Vault/Code Coverage Editiing/images/Pasted image 20250329143757.png",
     "Obsidian Vault/Code Coverage Editiing/images/Pasted image 20250329143605.png",
     "Obsidian Vault/Code Coverage Editiing/images/Pasted image 20250329141957.png",
     "Obsidian Vault/Code Coverage Editiing/images/Pasted image 20250329141714.png",
     "Obsidian Vault/Code Coverage Editiing/images/Pasted image 20250329141113.png",
-    "Obsidian Vault/Code Coverage Editiing/Canny Edge Module.md",
     "Obsidian Vault/Code Coverage Editiing/images/Pasted image 20250328230717.png",
     "Obsidian Vault/Code Coverage Editiing/images/Pasted image 20250328212216.png",
     "Obsidian Vault/Code Coverage Editiing/images/Pasted image 20250328231426.png",
