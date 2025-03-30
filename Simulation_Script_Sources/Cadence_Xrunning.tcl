@@ -8,19 +8,19 @@ set USE_GUI 1
 
 # Main design files (root directory)
 set MAIN_FILES {
-    Canny_edge/arc_tan.sv
-    Canny_edge/hysteresis.sv
-    Canny_edge/chip_top.sv
-    Canny_edge/gaussian_filter.sv
-    Canny_edge/gradient_calculation.sv
-    Canny_edge/pixel_loader.sv
-    Canny_edge/non_max_suppression.sv
-    Canny_edge/line_buffer.sv
-    Canny_edge/definitions_pkg.sv
-    Canny_edge/double_thresholding.sv
-    Canny_edge/definitions_pkg.sv
-    Canny_edge/sqrt_22b.sv
-    Canny_edge/canny_edge_top.sv
+    Image_Processing/arc_tan.sv
+    Image_Processing/hysteresis.sv
+    Image_Processing/chip_top.sv
+    Image_Processing/gaussian_filter.sv
+    Image_Processing/gradient_calculation.sv
+    Image_Processing/pixel_loader.sv
+    Image_Processing/non_max_suppression.sv
+    Image_Processing/line_buffer.sv
+    Image_Processing/definitions_pkg.sv
+    Image_Processing/double_thresholding.sv
+    Image_Processing/definitions_pkg.sv
+    Image_Processing/sqrt_22b.sv
+    Image_Processing/canny_edge_top.sv
 }
 
 # UART directory files
