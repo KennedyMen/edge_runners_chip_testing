@@ -1,14 +1,36 @@
 module gaussian_filter
-  import definitions_pkg::*;
+// this import will only be commented out for testing purposes 
+ // import definitions_pkg::*;
 (
   input   logic         clk, 
   input   logic         rstN, 
   input   logic [71:0]  gaussian_data_in,
   input   logic         gaussian_data_in_valid,
   output  logic [7:0]   gaussian_pixel_out,
-  output  logic         gaussian_pixel_out_valid
+  output  logic         gaussian_pixel_out_valid,
+  //---------------TESTING LOGIC SECTION ONLY COMMENTED OUT FOR TESTING-----
+  input   logic         kernel_select 
 );
 
+//----------------TESTING LOGIC COMMENTED OUT FOR ACTUAL DESIGN-----------
+logic [7:0] gaussian_kernel_3 [0:8];
+always_comb begin
+  if (kernel_select == 0) begin
+    gaussian_kernel_3  =  '{
+      8'h1, 8'h2, 8'h1, 
+      8'h2, 8'h4, 8'h2, 
+      8'h1, 8'h2, 8'h1 
+      };
+
+    end else begin
+      gaussian_kernel_3 = '{
+        8'h0, 8'h0, 8'h0, 
+        8'h0, 9'h10, 8'h0, 
+        8'h0, 8'h0, 8'h0
+        };
+
+      end
+    end
   logic [15:0] mult_data [8:0];
   logic [15:0] sum_data, sum_data_next;
   logic mult_data_valid, sum_data_valid;

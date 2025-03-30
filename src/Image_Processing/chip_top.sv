@@ -4,7 +4,11 @@ module chip_top
     input   logic clk,
     input   logic rstN,
     input   logic rx,
-    output  logic tx
+    output  logic tx,
+   //this is for all intents and purposes a test signal we should rid of this 
+   //later as a saftey measure. this add wasted space 
+   //----------------TESTING SIGNAL COMMENTED OUT FOR ACTUAL DESIGN-----------
+    input logic kernel_select
   );
 
   logic [FIFO_WIDTH-1:0] rx_rd_data;
@@ -30,7 +34,7 @@ module chip_top
     .pixel_in(rx_rd_data),
     .pixel_in_valid(rx_valid),
     .pixel_out(tx_wr_data),
-    .pixel_out_valid(tx_wr)
+    .pixel_out_valid(tx_wr),
+    .kernel_select(kernel_select)
   );
-
 endmodule: chip_top

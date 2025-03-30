@@ -6,7 +6,9 @@ module canny_edge_top
     input   logic [7:0] pixel_in,
     input   logic       pixel_in_valid,
     output  logic [7:0] pixel_out,
-    output  logic       pixel_out_valid
+    output  logic       pixel_out_valid,
+    //------------------TESTING SIGNALS COMMENTED OUT FOR ACTUAL DESIGN-------
+    input   logic kernel_select
   );
 
   logic [71:0]  pl1_data_out, pl2_data_out;
@@ -43,7 +45,9 @@ module canny_edge_top
     .gaussian_data_in(pl1_data_out),
     .gaussian_data_in_valid(pl1_data_out_valid),
     .gaussian_pixel_out(gaussian_pixel_out),
-    .gaussian_pixel_out_valid(gaussian_pixel_out_valid)
+    .gaussian_pixel_out_valid(gaussian_pixel_out_valid),
+    //-------------TEST SIGNALS COMMENTED OUT FOR ACUTAL DESIGN-------------
+    .kernel_select(kernel_select)
   );
 
   pixel_loader pl2(

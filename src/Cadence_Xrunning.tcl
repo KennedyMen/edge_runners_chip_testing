@@ -40,7 +40,7 @@ set UART_FIFO_FILES {
 
 # Testbench file
 set TESTBENCH_FILES {
-    testBenches/chip_top_tb.sv
+    testbenches/chip_top_tb.sv
 }
 
 # Function to build and execute xrun command

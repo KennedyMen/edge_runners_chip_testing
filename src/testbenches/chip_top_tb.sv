@@ -9,12 +9,14 @@ module chip_top_tb;
   logic rx;
   wire  tx;
 
+  logic kernel_select;
   // Instantiate chip_top DUT
   chip_top uut (
     .clk(clk),
     .rstN(rstN),
     .rx(rx),
-    .tx(tx)
+    .tx(tx),
+    .kernel_select(kernet_select)
   );
 
   // Clock generation: adjust CLK_PERIOD as needed
@@ -141,34 +143,40 @@ module chip_top_tb;
   // Main Test Sequence
   //--------------------------------------------------------------------------
   initial begin
+    for (int run = 0; run< 2; run++) begin
     // Initialize signals: set clock low, assert reset, and idle UART line high.
-    clk = 0;
-    rstN = 0;
-    rx = 1;
+      clk = 0;
+      rstN = 0;
+      rx = 1;
+      kernel_select = (run == 0) ? 0 : 1;
+      // Clear the output file
+      clear_output_file("./testImages/output_binary/edge.txt");
 
-    // Clear the output file
-    clear_output_file("./testImages/output_binary/edge.txt");
+      // Read input image file into memory
+      read_image_file();
 
-    // Read input image file into memory
-    read_image_file();
+      // Apply reset for a short period
+      #100;
+      rstN = 1;
+      #100;
+      rstN = 0;
+      #100;
+      rstN = 1;
+      #100;
 
-    // Apply reset for a short period
-    #100;
-    rstN = 1;
-    #100;
-    rstN = 0;
-    #100;
-    rstN = 1;
-    #100;
+      // For every pixel in the image, transmit it via UART,
+      // then receive the processed (edge-detected) pixel from the TX line.
+      for (int i = 0; i < total_pixels; i++) begin
+        // Transmit pixel (as one UART frame) into chip_top
+        uart_tx(image_mem[i]);
+        // Wait a short delay to allow internal processing (adjust as needed)
+        #(20);
+      end
 
-    // For every pixel in the image, transmit it via UART,
-    // then receive the processed (edge-detected) pixel from the TX line.
-    for (int i = 0; i < total_pixels; i++) begin
-      // Transmit pixel (as one UART frame) into chip_top
-      uart_tx(image_mem[i]);
-      // Wait a short delay to allow internal processing (adjust as needed)
-      #(20);
-    end
+      if (run == 1 ) begin
+        $display("Adjusting parameters for the second run...");
+      end
+    end 
   end
 
   always @(posedge clk) begin
