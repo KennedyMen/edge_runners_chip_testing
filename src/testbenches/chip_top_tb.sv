@@ -36,7 +36,7 @@ module chip_top_tb;
     int byte_data;
     int i;
     begin
-      file = $fopen("/projects/howard/edge_runners_chip_backup/aayush/canny_edge/testImages/images_binary/t001.txt", "rb");
+      file = $fopen("./testImages/images_binary/lena_gray.txt", "rb");
       if (file == 0) begin
         $error("ERROR: Could not open input file.");
         $finish;
@@ -147,12 +147,16 @@ module chip_top_tb;
     rx = 1;
 
     // Clear the output file
-    clear_output_file("/projects/howard/edge_runners_chip_backup/aayush/canny_edge/testImages/output_binary/edge.txt");
+    clear_output_file("./testImages/output_binary/edge.txt");
 
     // Read input image file into memory
     read_image_file();
 
     // Apply reset for a short period
+    #100;
+    rstN = 1;
+    #100;
+    rstN = 0;
     #100;
     rstN = 1;
     #100;
@@ -173,7 +177,7 @@ module chip_top_tb;
       reg [7:0] received_pixel;
       uart_rx(received_pixel);
       // Write the received pixel to the output file
-      write_pixel_to_file(received_pixel, "/projects/howard/edge_runners_chip_backup/aayush/canny_edge/testImages/output_binary/edge.txt");
+      write_pixel_to_file(received_pixel, "./testImages/output_binary/edge.txt");
     end
   end
 

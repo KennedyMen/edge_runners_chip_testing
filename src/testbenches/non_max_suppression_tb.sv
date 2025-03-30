@@ -200,36 +200,36 @@ module nms_tb;
   endtask
 
   initial begin
-    clear_file("testImages/output_binary/gaussian_output.txt");
-    clear_file("testImages/output_binary/gradient_direction.txt");
-    clear_file("testImages/output_binary/gradient_magnitude.txt");
-    clear_file("testImages/output_binary/intermediate_edge.txt");
-    clear_file("testImages/output_binary/intermediate_x.txt");
-    clear_file("testImages/output_binary/intermediate_y.txt");
-    clear_file("testImages/output_binary/direction_contour.txt");
+    clear_file("./testImages/output_binary/gaussian_output.txt");
+    clear_file("./testImages/output_binary/gradient_direction.txt");
+    clear_file("./testImages/output_binary/gradient_magnitude.txt");
+    clear_file("./testImages/output_binary/intermediate_edge.txt");
+    clear_file("./testImages/output_binary/intermediate_x.txt");
+    clear_file("./testImages/output_binary/intermediate_y.txt");
+    clear_file("./testImages/output_binary/direction_contour.txt");
   end
   always @ (posedge clk) begin
     if (gaussian_pixel_out_valid) begin
-      write_pixel_to_file(gaussian_pixel_out, 8, "testImages/output_binary/gaussian_output.txt");
+      write_pixel_to_file(gaussian_pixel_out, 8, "./testImages/output_binary/gaussian_output.txt");
     end
     if (gradient_out_valid) begin
-      write_pixel_to_file(gradient_magnitude, 11, "testImages/output_binary/gradient_magnitude.txt");
-      write_pixel_to_file(gradient_direction, 2, "testImages/output_binary/gradient_direction.txt");
+      write_pixel_to_file(gradient_magnitude, 11, "./testImages/output_binary/gradient_magnitude.txt");
+      write_pixel_to_file(gradient_direction, 2, "./testImages/output_binary/gradient_direction.txt");
       case (gradient_direction)
-        0: write_rgb_to_file(24'h0000FF, "testImages/output_binary/direction_contour.txt");
-        1: write_rgb_to_file(24'h00FF00, "testImages/output_binary/direction_contour.txt");
-        2: write_rgb_to_file(24'hFF0000, "testImages/output_binary/direction_contour.txt");
-        3: write_rgb_to_file(24'hFFFF00, "testImages/output_binary/direction_contour.txt");
+        0: write_rgb_to_file(24'h0000FF, "./testImages/output_binary/direction_contour.txt");
+        1: write_rgb_to_file(24'h00FF00, "./testImages/output_binary/direction_contour.txt");
+        2: write_rgb_to_file(24'hFF0000, "./testImages/output_binary/direction_contour.txt");
+        3: write_rgb_to_file(24'hFFFF00, "./testImages/output_binary/direction_contour.txt");
       endcase
-      write_pixel_to_file(pixel_out, 8, "testImages/output_binary/intermediate_edge.txt");
+      write_pixel_to_file(pixel_out, 8, "./testImages/output_binary/intermediate_edge.txt");
     end
     if (pixel_xy_valid) begin
-      write_pixel_to_file(pixel_out_x, 8, "testImages/output_binary/intermediate_x.txt");
-      write_pixel_to_file(pixel_out_y, 8, "testImages/output_binary/intermediate_y.txt");
+      write_pixel_to_file(pixel_out_x, 8, "./testImages/output_binary/intermediate_x.txt");
+      write_pixel_to_file(pixel_out_y, 8, "./testImages/output_binary/intermediate_y.txt");
     end
     if (nms_valid) begin
-        write_pixel_to_file(nms_magnitude, 11, "testImages/output_binary/nms.txt");
-        write_pixel_to_file(nms_direction, 2, "testImages/output_binary/nms_dir.txt");
+        write_pixel_to_file(nms_magnitude, 11, "./testImages/output_binary/nms.txt");
+        write_pixel_to_file(nms_direction, 2, "./testImages/output_binary/nms_dir.txt");
       end
   end
 

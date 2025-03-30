@@ -132,7 +132,7 @@ module hysteresis_tb;
     int i;                  // Loop index
     
     // Open the file for reading
-    file = $fopen("C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\images_binary\\t291.txt", "rb");
+    file = $fopen("./testImages/images_binary/\t291.txt", "rb");
     if (file == 0) begin
       $error("ERROR: Could not open the text file.");
       $finish;
@@ -226,44 +226,44 @@ module hysteresis_tb;
   endtask
 
   initial begin
-    clear_file("C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\gaussian_output.txt");
-    clear_file("C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\gradient_magnitude.txt");
-    clear_file("C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\gradient_direction.txt");
-    clear_file("C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\intermediate_edge.txt");
-    clear_file("C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\intermediate_x.txt");
-    clear_file("C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\intermediate_y.txt");
-    clear_file("C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\direction_contour.txt");
-    clear_file("C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\nms.txt");
-    clear_file("C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\nms_dir.txt");
-    clear_file("C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\edge.txt");
+    clear_file("./testImages/output_binary/direction_contour.txt");
+    clear_file("./testImages/output_binary/edge.txt");
+    clear_file("./testImages/output_binary/gaussian_output.txt");
+    clear_file("./testImages/output_binary/gradient_magnitude.txt");
+    clear_file("./testImages/output_binary/gradient_direction.txt");
+    clear_file("./testImages/output_binary/intermediate_edge.txt");
+    clear_file("./testImages/output_binary/intermediate_x.txt");
+    clear_file("./testImages/output_binary/intermediate_y.txt");
+    clear_file("./testImages/output_binary/nms.txt");
+    clear_file("./testImages/output_binary/nms_dir.txt");
   end
 
   always @ (posedge clk) begin
     if (gaussian_pixel_out_valid) begin
-      write_pixel_to_file(gaussian_pixel_out, "C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\gaussian_output.txt");
+      write_pixel_to_file(gaussian_pixel_out, "./testImages/output_binary/gaussian_output.txt");
     end
     if (gradient_out_valid) begin
-      write_pixel_to_file(gradient_magnitude, "C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\gradient_magnitude.txt");
-      write_pixel_to_file(gradient_direction, "C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\gradient_direction.txt");
+      write_pixel_to_file(gradient_magnitude, "./testImages/output_binary/gradient_magnitude.txt");
+      write_pixel_to_file(gradient_direction, "./testImages/output_binary/gradient_direction.txt");
       case (gradient_direction)
-        0: write_rgb_to_file(24'h0000FF, "C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\direction_contour.txt");
-        1: write_rgb_to_file(24'h00FF00, "C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\direction_contour.txt");
-        2: write_rgb_to_file(24'hFF0000, "C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\direction_contour.txt");
-        3: write_rgb_to_file(24'hFFFF00, "C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\direction_contour.txt");
+        0: write_rgb_to_file(24'h0000FF, "./testImages/output_binary/direction_contour.txt");
+        1: write_rgb_to_file(24'h00FF00, "./testImages/output_binary/direction_contour.txt");
+        2: write_rgb_to_file(24'hFF0000, "./testImages/output_binary/direction_contour.txt");
+        3: write_rgb_to_file(24'hFFFF00, "./testImages/output_binary/direction_contour.txt");
       endcase
-      write_pixel_to_file(sobel_out, "C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\intermediate_edge.txt");
+      write_pixel_to_file(sobel_out, "./testImages/output_binary/intermediate_edge.txt");
     end
     if (sobel_xy_valid) begin
-      write_pixel_to_file(sobel_out_x, "C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\intermediate_x.txt");
-      write_pixel_to_file(sobel_out_y, "C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\intermediate_y.txt");
+      write_pixel_to_file(sobel_out_x, "./testImages/output_binary/intermediate_x.txt");
+      write_pixel_to_file(sobel_out_y, "./testImages/output_binary/intermediate_y.txt");
     end
     if (nms_valid) begin
-      write_pixel_to_file(nms_magnitude, "C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\nms.txt");
-      write_pixel_to_file(nms_direction, "C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\nms_dir.txt");
+      write_pixel_to_file(nms_magnitude, "./testImages/output_binary/nms.txt");
+      write_pixel_to_file(nms_direction, "./testImages/output_binary/nms_dir.txt");
     end
     if (pixel_out_valid) begin
       write_pixel_to_file(pixel_out,
-      "C:\\Users\\ROG\\Desktop\\canny_edge\\testImages\\output_binary\\edge.txt");
+      "./testImages/output_binary/edge.txt");
     end
   end
 
