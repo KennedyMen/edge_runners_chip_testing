@@ -9,16 +9,17 @@ module chip_top_tb;
   logic rx;
   wire  tx;
   //-------------------TESTING SIGNALS COMMENTED OUT FOR NON TESTING---------
-  logic kernel_select;
-  logic [1:0] fill_select;
-  // Instantiate chip_top DUT
+  // logic kernel_select;
+  // // logic [1:0] fill_select;
+  // // Instantiate chip_top DUT
+  // int run;
   chip_top uut (
       .clk(clk),
       .rstN(rstN),
       .rx(rx),
-      .tx(tx),
-      .kernel_select(kernel_select),
-      .fill_select(fill_select)
+      .tx(tx)
+      // .kernel_select(kernel_select)
+      // .fill_select(fill_select)
   );
 
   // Clock generation: adjust CLK_PERIOD as needed
@@ -28,7 +29,6 @@ module chip_top_tb;
   // Image memory and pixel count
   byte image_mem[512*512];
   integer total_pixels;
-  int run;
   // File handle for output
   int file_out;
 
@@ -145,9 +145,12 @@ module chip_top_tb;
   // Main Test Sequence
   //--------------------------------------------------------------------------
   initial begin
-    run = 0;
-    for (run = 0; run < 3; run++) begin
+    // --------TESTING SIGNALS AND FOR LOOP FOR COVERAGE -BEGIN
+    // run = 0;
+    // for (run = 0; run < 3; run++) begin
       // Initialize signals: set clock low, assert reset, and idle UART line high.
+    // --------TESTING SIGNALS AND FOR LOOP FOR COVERAGE- END
+
       clk  = 0;
       rstN = 0;
       rx   = 1;
@@ -169,19 +172,21 @@ module chip_top_tb;
         // Wait a short delay to allow internal processing (adjust as needed)
         #20;
       end
-      if (run == 1) begin
-        $display("Adjusting parameters for the second run...");
-        kernel_select = 1;
-        fill_select = 0;
-      end else if (run == 2) begin
-        $display("Adjusting parameters for the third run...");
-        kernel_select = 0;
-        fill_select   = 1;
-      end
-    end
+      //------TESTING LOGIC DO NOT ENABLE ----------------
+      // if (run == 1) begin
+      //   $display("Adjusting parameters for the second run...");
+      //   // kernel_select = 1;
+      //   // fill_select = 0;
+      // end else if (run == 2) begin
+      //   $display("Adjusting parameters for the third run...");
+      //   // kernel_select = 0;
+      //   // fill_select   = 1;
+     // end
+    // end
 
     // For every pixel in the image, transmit it via UART,
     // then receive the processed (edge-detected) pixel from the TX line.
+    //------TESTING LOGIC DO NOT ENABLE -end---------------
   end
   always @(posedge clk) begin
     if (tx == 0) begin

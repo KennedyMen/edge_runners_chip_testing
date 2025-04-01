@@ -12,9 +12,9 @@ module uart_top
 
     // transmitter FIFO
     input logic [FIFO_WIDTH-1:0] tx_wr_data,
-    input logic tx_wr,
+    input logic tx_wr
     //----------TESTING SIGNALS IS COMMENTED OUT FOR ACTUAL DESIGN-----
-    input logic [1:0] fill_select
+    // ,input logic [1:0] fill_select
 );
 
   logic s_tick;
@@ -87,47 +87,46 @@ module uart_top
       .empty(tx_empty),
       .valid(tx_valid)
   );
-  always_comb begin
-    case (fill_select)
-      2'b01: begin
-        if (rx_empty) begin
-          //rx_wr
-          force rx_done = 1;
-          //rx_rd
-          force rx_rd = 0;
-        end
-        else if (rx_full) begin
-          //rx_rd
-          force rx_rd = 1;
-          //rx_wr
-          force rx_done = 0;
-          if (~tx_empty && tx_full) begin
-          //rx_rd
-          force rx_rd = 1;
-          //rx_wr
-          force rx_done = 1;
-          end
-        end
-        if (tx_empty) begin
+  // always_comb begin
+  //   // case (fill_select)
+  //     2'b01: begin
+  //       if (rx_empty) begin
+  //         //rx_wr
+  //         force rx_done = 1;
+  //         //rx_rd
+  //         force rx_rd = 0;
+  //       end
+  //       else if (rx_full) begin
+  //         //rx_rd
+  //         force rx_rd = 1;
+  //         //rx_wr
+  //         force rx_done = 0;
+  //         if (~tx_empty && tx_full) begin
+  //         //rx_rd
+  //         force rx_rd = 1;
+  //         //rx_wr
+  //         force rx_done = 1;
+  //         end
+  //       end
+        // if (tx_empty) begin
           // tx_wr
-          force tx_wr = 1;
-          //tx_rd
-          force tx_done = 0;
-        end
-        else if (tx_full) begin
-          //tx_rd
-          force tx_done = 1;
-          // tx_wr
-          force tx_wr = 0;
-          if (~tx_empty && tx_full) begin
-          //rx_rd
-          force rx_rd = 1;
-          //rx_wr
-          force rx_done = 1;
-          end
-        end
-      end
-      default;
-    endcase
-  end
+      //     force tx_wr = 1;
+      //     //tx_rd
+      //     force tx_done = 0;
+      //   end
+      //   else if (tx_full) begin
+      //     //tx_rd
+      //     force tx_done = 1;
+      //     // tx_wr
+      //     force tx_wr = 0;
+      //     if (~tx_empty && tx_full) begin
+      //     //rx_rd
+      //     force rx_rd = 1;
+      //     //rx_wr
+      //     force rx_done = 1;
+      //     end
+      //   end
+      // end
+      // default;
+    // endcase
 endmodule : uart_top
