@@ -1,3 +1,10 @@
+# 100% Coverage (With Exceptions) 
+
+
+![alt text](Github_Images/Coverage_Image.png "Title")
+
+
+
 # Guide to Testing and Simulation
 Basic Guide to Setup Cadence with all the ability to synchronize 
 >[!NOTE]
