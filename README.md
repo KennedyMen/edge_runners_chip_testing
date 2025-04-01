@@ -26,7 +26,7 @@ Home
 │   │   │   └── chip_top.sv
 │   │   ├── uart/
 │   │   │   ├── fifo/
-|	│   │   │   └─ fifo_files.sv
+|   │   │   └─ fifo_files.sv
 │   │   │   └── uart_files.sv
 │   │   └── Image_Processing/
 │   │       └── canny_edge_modules.sv
