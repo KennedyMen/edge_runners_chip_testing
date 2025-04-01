@@ -3,8 +3,8 @@ file mkdir ./Vivado/Journals
 file mkdir ./Vivado/Logs
 file mkdir /Vivado/Sims
 # Create a new project in the same directory as this script
-create_project -force nms_project Vivado/Sims -part xc7z020clg484-1
- file mkdir ./Vivado/Sims/nms_project.sim/sim_1/behav/xsim/
+create_project -force Top_Testing Vivado/Sims -part xc7z020clg484-1
+ file mkdir ./Vivado/Sims/Top_Testing.sim/sim_1/behav/xsim/
 
 set script_dir [file dirname [info script]]
 # Copy the entire testImages folder to the simulation directory

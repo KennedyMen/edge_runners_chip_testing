@@ -1,5 +1,6 @@
 {
   "attachmentFolderPath": "Obsidian Vault/Code Coverage Editiing/images",
   "vimMode": true,
-  "showLineNumber": true
+  "showLineNumber": true,
+  "promptDelete": false
 }

@@ -3,8 +3,7 @@
 
 ![](https://holocron.so/uploads/535e2dc1-pasted-image-20250328204420.png)
 
-
- to start we have very low coverage on specific points specifically on sections where the bit with is 10 (or ten with bit slicing)
+to start we have very low coverage on specific points specifically on sections where the bit with is 10 (or ten with bit slicing)
 
  ![](https://holocron.so/uploads/eb558103-pasted-image-20250328204712.png)
  after a bit of looking it seems to be because the values for the 9th and 10th are never set on or off. i have believe this is due to either the values never updating or being read at that level and being truncated at the test-bench

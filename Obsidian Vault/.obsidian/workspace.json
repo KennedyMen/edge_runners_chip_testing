@@ -11,10 +11,14 @@
             "id": "b379b73ad6b95603",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Code Coverage Editiing/README.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "README"
             }
           }
         ]
@@ -164,22 +168,31 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b379b73ad6b95603",
+  "active": "11739e02e9218ceb",
   "lastOpenFiles": [
-    "Obsidian Vault/Code Coverage Editiing/Solution.md",
+    "().md",
+    "Code Coverage Editiing/README.md",
+    "Code Coverage Editiing/Solution.md",
+    "Code Coverage Editiing/UART Module.md",
+    "Code Coverage Editiing/Canny Edge Module.md",
     "Obsidian Vault/Code Coverage Editiing/UART Module.md",
+    "Code Coverage Editiing/images/Untitled.canvas",
+    "Code Coverage Editiing/images/Untitled 1.canvas",
+    "Code Coverage Editiing/images/Pasted image 20250329143757.png",
+    "Code Coverage Editiing/images/Pasted image 20250329143605.png",
+    "Code Coverage Editiing/images/Pasted image 20250329141957.png",
+    "Code Coverage Editiing/images/Pasted image 20250329141714.png",
+    "Code Coverage Editiing/images/Pasted image 20250329141113.png",
+    "Code Coverage Editiing/images/Pasted image 20250329140040.png",
+    "Code Coverage Editiing/images/Pasted image 20250329134416.png",
+    "Code Coverage Editiing/images/Pasted image 20250329133110.png",
+    "Code Coverage Editiing/images/Pasted image 20250329131528.png",
+    "Code Coverage Editiing/images/Pasted image 20250329131448.png",
+    "Code Coverage Editiing/images",
+    "Code Coverage Editiing",
+    "Obsidian Vault/Code Coverage Editiing/Solution.md",
     "Obsidian Vault/Code Coverage Editiing/Canny Edge Module.md",
     "mdHelpers.js",
-    "Obsidian Vault/Code Coverage Editiing/images/Pasted image 20250328225651.png",
-    "Obsidian Vault/Code Coverage Editiing/images/Pasted image 20250329143757.png",
-    "Obsidian Vault/Code Coverage Editiing/images/Pasted image 20250329143605.png",
-    "Obsidian Vault/Code Coverage Editiing/images/Pasted image 20250329141957.png",
-    "Obsidian Vault/Code Coverage Editiing/images/Pasted image 20250329141714.png",
-    "Obsidian Vault/Code Coverage Editiing/images/Pasted image 20250329141113.png",
-    "Obsidian Vault/Code Coverage Editiing/images/Pasted image 20250328230717.png",
-    "Obsidian Vault/Code Coverage Editiing/images/Pasted image 20250328212216.png",
-    "Obsidian Vault/Code Coverage Editiing/images/Pasted image 20250328231426.png",
-    "Obsidian Vault/Code Coverage Editiing/images/Pasted image 20250329140040.png",
     "Obsidian Vault/Code Coverage Editiing/images/Untitled.canvas",
     "Obsidian Vault/Code Coverage Editiing/images/Untitled 1.canvas"
   ]

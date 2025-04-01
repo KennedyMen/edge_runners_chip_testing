@@ -4,29 +4,31 @@ module chip_top_tb;
   // Clock and reset signals
   logic clk;
   logic rstN;
-  
+
   // UART serial lines: 'rx' is the input to chip_top, 'tx' is its output
   logic rx;
   wire  tx;
-
+  //-------------------TESTING SIGNALS COMMENTED OUT FOR NON TESTING---------
   logic kernel_select;
+  logic [1:0] fill_select;
   // Instantiate chip_top DUT
   chip_top uut (
-    .clk(clk),
-    .rstN(rstN),
-    .rx(rx),
-    .tx(tx),
-    .kernel_select(kernet_select)
+      .clk(clk),
+      .rstN(rstN),
+      .rx(rx),
+      .tx(tx),
+      .kernel_select(kernel_select),
+      .fill_select(fill_select)
   );
 
   // Clock generation: adjust CLK_PERIOD as needed
   localparam CLK_PERIOD = 10;
-  always #(CLK_PERIOD/2) clk = ~clk;
+  always #(CLK_PERIOD / 2) clk = ~clk;
 
   // Image memory and pixel count
   byte image_mem[512*512];
   integer total_pixels;
-
+  int run;
   // File handle for output
   int file_out;
 
@@ -44,10 +46,11 @@ module chip_top_tb;
         $finish;
       end
       i = 0;
-      while (!$feof(file)) begin
+      while (!$feof(
+          file
+      )) begin
         byte_data = $fgetc(file);
-        if (byte_data == -1)
-          break;
+        if (byte_data == -1) break;
         image_mem[i] = byte_data;
         i = i + 1;
       end
@@ -65,8 +68,7 @@ module chip_top_tb;
     int file_temp;
     begin
       file_temp = $fopen(path, "w");
-      if (file_temp == 0)
-        $display("Error: Unable to open output file for writing.");
+      if (file_temp == 0) $display("Error: Unable to open output file for writing.");
       $fclose(file_temp);
     end
   endtask
@@ -127,7 +129,7 @@ module chip_top_tb;
     localparam BIT_PERIOD = 320;
     begin
       // Wait half a bit period to sample in the middle of the start bit
-      #(BIT_PERIOD/2);
+      #(BIT_PERIOD / 2);
       // Sample each data bit in the middle of its period
       for (j = 0; j < 8; j = j + 1) begin
         temp[j] = tx;
@@ -143,42 +145,44 @@ module chip_top_tb;
   // Main Test Sequence
   //--------------------------------------------------------------------------
   initial begin
-    for (int run = 0; run< 2; run++) begin
-    // Initialize signals: set clock low, assert reset, and idle UART line high.
-      clk = 0;
+    run = 0;
+    for (run = 0; run < 3; run++) begin
+      // Initialize signals: set clock low, assert reset, and idle UART line high.
+      clk  = 0;
       rstN = 0;
-      rx = 1;
-      kernel_select = (run == 0) ? 0 : 1;
+      rx   = 1;
       // Clear the output file
       clear_output_file("./testImages/output_binary/edge.txt");
-
       // Read input image file into memory
       read_image_file();
-
       // Apply reset for a short period
-      #100;
+      #10;
       rstN = 1;
-      #100;
+      #10;
       rstN = 0;
-      #100;
+      #10;
       rstN = 1;
-      #100;
-
-      // For every pixel in the image, transmit it via UART,
-      // then receive the processed (edge-detected) pixel from the TX line.
+      #10;
       for (int i = 0; i < total_pixels; i++) begin
         // Transmit pixel (as one UART frame) into chip_top
         uart_tx(image_mem[i]);
         // Wait a short delay to allow internal processing (adjust as needed)
-        #(20);
+        #20;
       end
-
-      if (run == 1 ) begin
+      if (run == 1) begin
         $display("Adjusting parameters for the second run...");
+        kernel_select = 1;
+        fill_select = 0;
+      end else if (run == 2) begin
+        $display("Adjusting parameters for the third run...");
+        kernel_select = 0;
+        fill_select   = 1;
       end
-    end 
-  end
+    end
 
+    // For every pixel in the image, transmit it via UART,
+    // then receive the processed (edge-detected) pixel from the TX line.
+  end
   always @(posedge clk) begin
     if (tx == 0) begin
       // Receive the processed pixel via UART
